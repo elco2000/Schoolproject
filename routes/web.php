@@ -15,9 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/video', function () {
-    return view('video/index');
-});
 
-Route::resource('/video', 'VideoController');
+
+
+Route::get('/video', 'VideosController@index');
 Route::get('/channels', 'ChannelsController@index');

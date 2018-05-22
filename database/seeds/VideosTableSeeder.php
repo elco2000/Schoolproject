@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class VideoTableSeeder extends Seeder
+class VideosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
