@@ -20,3 +20,4 @@ Route::get('/video', function () {
 });
 
 Route::resource('/video', 'VideoController');
+Route::get('/channels', 'ChannelsController@index');

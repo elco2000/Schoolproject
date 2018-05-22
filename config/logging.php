@@ -6,7 +6,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Log Channel
+    | Default Log channels
     |--------------------------------------------------------------------------
     |
     | This option defines the default log channel that gets used when writing
