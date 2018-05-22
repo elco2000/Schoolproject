@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//kukhh78tt87t8vt878v8
+Route::get('/video', function () {
+    return view('video/index');
+});
+
+Route::resource('/video', 'VideoController');
