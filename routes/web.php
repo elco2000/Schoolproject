@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
+Route::get('/video', 'VideosController@index');
 Route::get('/categories', 'CategoriesController@index');
 
 Route::get('/genres', 'GenresController@index');
