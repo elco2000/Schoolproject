@@ -17,9 +17,17 @@ Route::get('/', function () {
 
 
 
+Route::get('/categories', 'CategoriesController@index');
+
+Route::get('/genres', 'GenresController@index');
+
+Route::resource('/channels', 'ChannelsController');
 Route::resource('/videos', 'VideosController');
 Route::get('/videos', 'VideosController@index');
 Route::get('/channels', 'ChannelsController@index');
-
+Route::get('/videos/{video}', 'VideosController@show');
 Route::get('/videos/create', 'VideosController@create');
 Route::get('/videos/{video}/edit', 'VideosController@edit');
+
+Route::get('/channels/create', 'ChannelsController@create');
+Route::get('/channels/{channel}/edit', 'ChannelsController@edit');
