@@ -17,35 +17,22 @@ Route::get('/', function () {
 
 
 
-Route::resource('/videos', 'VideosController');
-Route::get('/videos', 'VideosController@index');
 
-Route::get('/video', 'VideosController@index');
 
-Route::get('/categories', 'CategoriesController@index');
 
 Route::get('/genres', 'GenresController@index');
 
-Route::resource('/channels', 'ChannelsController');
-
-Route::get('/video', 'VideosController@index');
-
+Route::resource('/categories', 'CategoriesController');
 Route::get('/categories', 'CategoriesController@index');
+Route::get('/categories/create', 'CategoriesController@create');
+Route::get('/categories/{category}/edit', 'CategoriesController@edit');
 
-Route::get('/genres', 'GenresController@index');
-
-Route::resource('/channels', 'ChannelsController');
 Route::resource('/videos', 'VideosController');
 Route::get('/videos', 'VideosController@index');
+Route::get('/videos/create', 'VideosController@create');
+Route::get('/videos/{video}/edit', 'VideosController@edit');
+
+Route::resource('/channels', 'ChannelsController');
 Route::get('/channels', 'ChannelsController@index');
-
-Route::get('/videos/create', 'VideosController@create');
-Route::get('/videos/{video}/edit', 'VideosController@edit');
-
-Route::get('/videos/create', 'VideosController@create');
-Route::get('/videos/{video}/edit', 'VideosController@edit');
-
-Route::get('/channels/create', 'ChannelsController@create');
-Route::get('/channels/{channel}/edit', 'ChannelsController@edit');
 Route::get('/channels/create', 'ChannelsController@create');
 Route::get('/channels/{channel}/edit', 'ChannelsController@edit');
