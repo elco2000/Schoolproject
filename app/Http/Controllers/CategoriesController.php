@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\StoreCategoryPost;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -26,7 +27,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
     /**
@@ -37,7 +38,16 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validated();
+
+        $category = new Category();
+        $category->name = request('name');
+        $category->description = request('description');
+        $category->genre_id = request('genre_id');
+        $category->save();
+
+        $category = Category::all();
+        return redirect()->action('CategoriesController@index')->with('correct', 'Category Added');
     }
 
     /**
@@ -48,7 +58,7 @@ class CategoriesController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('categories.show', compact('category'));
     }
 
     /**
@@ -59,7 +69,7 @@ class CategoriesController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -69,9 +79,17 @@ class CategoriesController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(StoreCategoryPost $request, Category $category)
     {
-        //
+        $validated = $request->validated();
+
+        $category = new Category();
+        $category->name = request['name'];
+        $category->description = request['description'];
+        $category->genre_id = request['genre_id'];
+        $category->save();
+
+        return redirect()->action('CategoriesController@index')->with('correct', 'Category Updated');
     }
 
     /**
@@ -82,6 +100,7 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->action('CategoriesController@index')->with('correct', 'Category Removed');
     }
 }
