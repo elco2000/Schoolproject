@@ -38,12 +38,12 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validated();
+//        $validated = $request->validated();
 
         $category = new Category();
-        $category->name = request('name');
-        $category->description = request('description');
-        $category->genre_id = request('genre_id');
+        $category->name = $request['name'];
+        $category->description = $request['description'];
+        $category->genre_id = $request['genre_id'];
         $category->save();
 
         $category = Category::all();
@@ -81,12 +81,12 @@ class CategoriesController extends Controller
      */
     public function update(StoreCategoryPost $request, Category $category)
     {
-        $validated = $request->validated();
+//        $validated = $request->validated();
 
         $category = new Category();
-        $category->name = request['name'];
-        $category->description = request['description'];
-        $category->genre_id = request['genre_id'];
+        $category->name = $request['name'];
+        $category->description = $request['description'];
+        $category->genre_id = $request['genre_id'];
         $category->save();
 
         return redirect()->action('CategoriesController@index')->with('correct', 'Category Updated');
