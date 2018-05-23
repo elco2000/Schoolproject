@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 
 
-
-Route::get('/video', 'VideosController@index');
+Route::resource('/videos', 'VideosController');
+Route::get('/videos', 'VideosController@index');
 Route::get('/channels', 'ChannelsController@index');
+
+Route::get('/videos/create', 'VideosController@create');
+Route::get('/videos/{video}/edit', 'VideosController@edit');

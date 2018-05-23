@@ -17,6 +17,7 @@ class CreateVideosTable extends Migration
             $table->increments('id');
             $table->string('title', 50);
             $table->text('description');
+            $table->string('videoUrl');
             $table->timestamps();
         });
     }
