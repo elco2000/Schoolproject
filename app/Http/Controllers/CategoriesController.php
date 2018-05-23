@@ -83,7 +83,6 @@ class CategoriesController extends Controller
     {
 //        $validated = $request->validated();
 
-        $category = new Category();
         $category->name = $request['name'];
         $category->description = $request['description'];
         $category->genre_id = $request['genre_id'];
