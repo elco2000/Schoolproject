@@ -2,13 +2,15 @@
     {!! Form::token() !!}
 
     <div class="form-group">
-        {!! Form::label('name', 'description', 'genre_id'); !!}
+        {!! Form::label('name', 'name'); !!}
         {!! Form::text('name', $category->name, array('class' => 'form-control')) !!}
     </div>
     <div class="form-group">
+        {!! Form::label('description', 'description'); !!}
         {!! Form::textarea('description', $category->description, array('class' => 'form-control', 'rows' => '3')) !!}
     </div>
     <div class="form-group">
+        {!! Form::label('genre_id', 'genre_id'); !!}
         {!! Form::text('genre_id', $category->genre_id, array('class' => 'form-control')) !!}
     </div>
     <div class="form-group">
