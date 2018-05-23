@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/categories', 'CategoriesController@index');
+
+Route::get('/genres', 'GenresController@index');
+
 Route::get('/channels', 'ChannelsController@index');
