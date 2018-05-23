@@ -35,7 +35,12 @@ Route::get('/categories', 'CategoriesController@index');
 Route::get('/genres', 'GenresController@index');
 
 Route::resource('/channels', 'ChannelsController');
+Route::resource('/videos', 'VideosController');
+Route::get('/videos', 'VideosController@index');
 Route::get('/channels', 'ChannelsController@index');
+
+Route::get('/videos/create', 'VideosController@create');
+Route::get('/videos/{video}/edit', 'VideosController@edit');
 
 Route::get('/videos/create', 'VideosController@create');
 Route::get('/videos/{video}/edit', 'VideosController@edit');
