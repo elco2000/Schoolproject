@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 
 
+
+
+
 Route::get('/genres', 'GenresController@index');
 
 Route::resource('/categories', 'CategoriesController');
