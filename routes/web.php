@@ -26,6 +26,7 @@ Route::resource('/categories', 'CategoriesController');
 Route::get('/categories', 'CategoriesController@index');
 Route::get('/categories/create', 'CategoriesController@create');
 Route::get('/categories/{category}/edit', 'CategoriesController@edit');
+Route::get('/categories/{category}', 'CategoriesController@show');
 
 Route::resource('/videos', 'VideosController');
 Route::get('/videos', 'VideosController@index');
@@ -37,6 +38,7 @@ Route::resource('/channels', 'ChannelsController');
 Route::get('/channels', 'ChannelsController@index');
 Route::get('/channels/create', 'ChannelsController@create');
 Route::get('/channels/{channel}/edit', 'ChannelsController@edit');
+Route::get('/channels/{channel}', 'ChannelsController@show');
 
 Route::resource('/notifications', 'NotificationsController');
 Route::get('/notifications', 'NotificationsController@index');
