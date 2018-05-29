@@ -20,9 +20,7 @@ Route::get('/', function () {
 
 
 
-
-
-
+Route::get('/genres', 'GenresController@index');
 
 Route::resource('/categories', 'CategoriesController');
 Route::get('/categories', 'CategoriesController@index');
@@ -41,3 +39,9 @@ Route::get('/channels', 'ChannelsController@index');
 Route::get('/channels/create', 'ChannelsController@create');
 Route::get('/channels/{channel}/edit', 'ChannelsController@edit');
 Route::get('/channels/{channel}', 'ChannelsController@show');
+
+Route::resource('/notifications', 'NotificationsController');
+Route::get('/notifications', 'NotificationsController@index');
+
+Route::resource('/reactions', 'ReactionsController');
+Route::get('/reactions', 'ReactionsController@index');
