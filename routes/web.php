@@ -20,7 +20,11 @@ Route::get('/', function () {
 
 
 
+Route::resource('/genres', 'GenresController');
 Route::get('/genres', 'GenresController@index');
+Route::get('/genres/create', 'GenresController@create');
+Route::get('/genres/{genre}/edit', 'GenresController@edit');
+Route::get('/genres/{genre}', 'GenresController@show');
 
 Route::resource('/categories', 'CategoriesController');
 Route::get('/categories', 'CategoriesController@index');
@@ -42,3 +46,6 @@ Route::get('/channels/{channel}', 'ChannelsController@show');
 
 Route::resource('/notifications', 'NotificationsController');
 Route::get('/notifications', 'NotificationsController@index');
+
+Route::resource('/reactions', 'ReactionsController');
+Route::get('/reactions', 'ReactionsController@index');
