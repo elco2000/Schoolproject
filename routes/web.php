@@ -41,3 +41,6 @@ Route::get('/channels', 'ChannelsController@index');
 Route::get('/channels/create', 'ChannelsController@create');
 Route::get('/channels/{channel}/edit', 'ChannelsController@edit');
 Route::get('/channels/{channel}', 'ChannelsController@show');
+
+Route::resource('/reactions', 'ReactionsController');
+Route::get('/reactions', 'ReactionsController@index');
