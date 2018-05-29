@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreVideoPost;
 use App\Video;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class VideosController extends Controller
     public function index()
     {
         $videos = Video::all()->take(10);
-        return view ('video.index', compact('videos') );
+        return view ('videos.index', compact('videos') );
     }
 
     /**
@@ -25,7 +26,7 @@ class VideosController extends Controller
      */
     public function create()
     {
-        //
+        return view ('videos.create');
     }
 
     /**
@@ -34,9 +35,18 @@ class VideosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreVideoPost $request)
     {
-        //
+        $validatedData = $request->validated();
+
+
+        $video = new Video();
+        $video->title = $request['title'];
+        $video->description = $request['description'];
+        $video->videoUrl = $request['videoUrl'];
+        $video->save();
+
+       return redirect()->action('VideosController@index')->with('correct', 'Video gemaakt');
     }
 
     /**
@@ -47,7 +57,7 @@ class VideosController extends Controller
      */
     public function show(Video $video)
     {
-        //
+        return view('videos.show', compact('video'));
     }
 
     /**
@@ -58,7 +68,7 @@ class VideosController extends Controller
      */
     public function edit(Video $video)
     {
-        //
+        return view('videos.edit', compact('video' ));
     }
 
     /**
@@ -68,9 +78,16 @@ class VideosController extends Controller
      * @param  \App\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Video $video)
+    public function update(StoreVideoPost $request, Video $video)
     {
-        //
+        $validatedData = $request->validated();
+
+        $video->title = $request['title'];
+        $video->description = $request['description'];
+        $video->videoUrl = $request['videoUrl'];
+        $video->save();
+
+        return redirect ()->action('VideosController@index')->with('correct', 'Video gewijzigd');
     }
 
     /**
@@ -81,6 +98,8 @@ class VideosController extends Controller
      */
     public function destroy(Video $video)
     {
-        //
+        $video->delete();
+
+        return redirect ()->action('VideosController@index')->with('correct', 'Video verwijderd');
     }
 }

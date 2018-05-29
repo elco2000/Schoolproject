@@ -4,10 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class video extends Model
-
+class Category extends Model
 {
-    protected $fillable = ['title', 'description', 'videoUrl'];
+    protected $fillable = ['name', 'description'];
     protected $guarded = [];
 }
-
