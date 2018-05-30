@@ -4,7 +4,7 @@
     @foreach($reactions as $reaction)
         <li>{{$reaction->text}}</li>
         <li>{{$reaction->account_idaccount}}</li>
-        <li>{{$reaction->channel_idchannel}}</li>
+        <li>{{$reaction->channel_id}}</li>
         <br>
     @endforeach
 </ul>
