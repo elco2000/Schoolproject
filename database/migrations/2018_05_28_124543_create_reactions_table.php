@@ -17,7 +17,7 @@ class CreateReactionsTable extends Migration
             $table->increments('id');
             $table->text('text');
             $table->integer('account_idaccount');
-            $table->integer('channel_idchannel');
+            $table->integer('channel_id');
             $table->timestamps();
         });
     }
