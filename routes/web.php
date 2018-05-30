@@ -43,3 +43,7 @@ Route::get('/channels/{channel}/edit', 'ChannelsController@edit');
 
 Route::resource('/notifications', 'NotificationsController');
 Route::get('/notifications', 'NotificationsController@index');
+Route::get('/notifications/{notification}', 'NotificationsController@show');
+Route::get('/notifications/create', 'NotificationsController@create');
+Route::get('/notifications/{notification}/edit', 'NotificationsController@edit');
+
