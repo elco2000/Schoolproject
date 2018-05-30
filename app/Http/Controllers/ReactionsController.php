@@ -27,6 +27,7 @@ class ReactionsController extends Controller
     public function create()
     {
         //
+        return view('reactions.create');
     }
 
     /**
@@ -38,6 +39,11 @@ class ReactionsController extends Controller
     public function store(Request $request)
     {
         //
+        $channel = new Reaction();
+        $channel->text = $request['text'];
+        $channel->account_idaccount = $request['account_idaccount'];
+        $channel->channel_idchannel = $request['channel_idchannel'];
+        $channel->save();
     }
 
     /**
@@ -49,6 +55,7 @@ class ReactionsController extends Controller
     public function show(Reaction $reaction)
     {
         //
+        return view('reactions.show', compact('reaction'));
     }
 
     /**
@@ -60,6 +67,7 @@ class ReactionsController extends Controller
     public function edit(Reaction $reaction)
     {
         //
+        return view('reactions.edit', compact('reaction'));
     }
 
     /**
@@ -72,6 +80,10 @@ class ReactionsController extends Controller
     public function update(Request $request, Reaction $reaction)
     {
         //
+        $reaction->text = $request['text'];
+        $reaction->account_idaccount = $request['account_idaccount'];
+        $reaction->channel_idchannel = $request['channel_idchannel'];
+        $reaction->save();
     }
 
     /**
@@ -83,5 +95,6 @@ class ReactionsController extends Controller
     public function destroy(Reaction $reaction)
     {
         //
+        $reaction->delete();
     }
 }

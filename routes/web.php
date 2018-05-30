@@ -49,3 +49,6 @@ Route::get('/notifications', 'NotificationsController@index');
 
 Route::resource('/reactions', 'ReactionsController');
 Route::get('/reactions', 'ReactionsController@index');
+Route::get('/reactions/create', 'ReactionsController@create');
+Route::get('/reactions/{reaction}', 'ReactionsController@show');
+Route::get('/reactions/{reaction}/edit', 'ReactionsController@edit');
