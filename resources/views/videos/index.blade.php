@@ -8,5 +8,6 @@
                 <li>{{$video->title}}</li>
                 <li>{{$video->description}}</li>
                 <li>{{$video->videoUrl}}</li>
+                <br>
         @endforeach
 </ul>

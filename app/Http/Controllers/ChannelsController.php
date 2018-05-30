@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Channel;
+//use App\Http\Requests\StoreChannelPost;
 use Illuminate\Http\Request;
 
 class ChannelsController extends Controller
@@ -27,6 +28,7 @@ class ChannelsController extends Controller
     public function create()
     {
         //
+        return view('channels.create');
     }
 
     /**
@@ -38,6 +40,14 @@ class ChannelsController extends Controller
     public function store(Request $request)
     {
         //
+        $channel = new Channel();
+        $channel->name = $request['name'];
+        $channel->logoUrl = $request['logoUrl'];
+        $channel->channelUrl = $request['channelUrl'];
+        $channel->identertainer = $request['identertainer'];
+        $channel->save();
+
+//        return redirect()->action('ChannelsController@index')->with('correct', 'Channel aangemaakt!');
     }
 
     /**
@@ -49,6 +59,7 @@ class ChannelsController extends Controller
     public function show(Channel $channel)
     {
         //
+        return view('channels.show', compact('channel'));
     }
 
     /**
@@ -60,6 +71,7 @@ class ChannelsController extends Controller
     public function edit(Channel $channel)
     {
         //
+        return view('channels.edit', compact('channel'));
     }
 
     /**
@@ -72,6 +84,13 @@ class ChannelsController extends Controller
     public function update(Request $request, Channel $channel)
     {
         //
+        $channel->name = $request['name'];
+        $channel->logoUrl = $request['logoUrl'];
+        $channel->channelUrl = $request['channelUrl'];
+        $channel->identertainer = $request['identertainer'];
+        $channel->save();
+
+//        return redirect()->action('MemesController@index')->with('correct', 'Meme gewijzigd');
     }
 
     /**
@@ -83,5 +102,7 @@ class ChannelsController extends Controller
     public function destroy(Channel $channel)
     {
         //
+        $channel->delete();
+//        return redirect()->action('MemesController@index')->with('correct', 'Meme verwijderd');
     }
 }
