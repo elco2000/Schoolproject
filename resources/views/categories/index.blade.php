@@ -8,4 +8,4 @@
     @endforeach
 </ul>
 
-<a href="{{route('genres.index')}}">List Genres</a>
+<a href="{!! url('genres'); !!}">List Genres</a>
