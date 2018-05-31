@@ -1,11 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use App\video;
 use App\Http\Requests\StoreVideoPost;
-use App\Video;
 use Illuminate\Http\Request;
-
 class VideosController extends Controller
 {
     /**
@@ -18,7 +16,6 @@ class VideosController extends Controller
         $videos = Video::all()->take(10);
         return view ('videos.index', compact('videos') );
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -28,7 +25,6 @@ class VideosController extends Controller
     {
         return view ('videos.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -38,17 +34,13 @@ class VideosController extends Controller
     public function store(StoreVideoPost $request)
     {
         $validatedData = $request->validated();
-
-
         $video = new Video();
         $video->title = $request['title'];
         $video->description = $request['description'];
         $video->videoUrl = $request['videoUrl'];
         $video->save();
-
-       return redirect()->action('VideosController@index')->with('correct', 'Video gemaakt');
+        return redirect()->action('VideosController@index')->with('correct', 'Video gemaakt');
     }
-
     /**
      * Display the specified resource.
      *
@@ -59,7 +51,6 @@ class VideosController extends Controller
     {
         return view('videos.show', compact('video'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -70,7 +61,6 @@ class VideosController extends Controller
     {
         return view('videos.edit', compact('video' ));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -81,15 +71,12 @@ class VideosController extends Controller
     public function update(StoreVideoPost $request, Video $video)
     {
         $validatedData = $request->validated();
-
         $video->title = $request['title'];
         $video->description = $request['description'];
         $video->videoUrl = $request['videoUrl'];
         $video->save();
-
         return redirect ()->action('VideosController@index')->with('correct', 'Video gewijzigd');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -99,7 +86,6 @@ class VideosController extends Controller
     public function destroy(Video $video)
     {
         $video->delete();
-
         return redirect ()->action('VideosController@index')->with('correct', 'Video verwijderd');
     }
 }

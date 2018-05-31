@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreNotificationPost;
 use App\Notification;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,7 @@ class NotificationsController extends Controller
      */
     public function create()
     {
-        //
+        return view ('notifications.create');
     }
 
     /**
@@ -34,9 +35,17 @@ class NotificationsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreNotificationPost $request)
     {
-        //
+        $validatedData = $request->validated();
+
+
+        $notification = new Notification();
+        $notification->name = $request['name'];
+        $notification->text = $request['text'];
+        $notification->save();
+
+        return redirect()->action('NotificationsController@index')->with('correct', 'Notification gemaakt');
     }
 
     /**
@@ -45,9 +54,9 @@ class NotificationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Notification $notification)
     {
-        //
+        return view('notifications.show', compact('notification'));
     }
 
     /**
@@ -56,9 +65,9 @@ class NotificationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Notification $notification)
     {
-        //
+        return view('notifications.edit', compact('notification' ));
     }
 
     /**
@@ -68,9 +77,15 @@ class NotificationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreNotificationPost $request, Notification $notification)
     {
-        //
+        $validatedData = $request->validated();
+
+        $notification->name = $request['name'];
+        $notification->text = $request['text'];
+        $notification->save();
+
+        return redirect ()->action('NotificationsController@index')->with('correct', 'Notification gewijzigd');
     }
 
     /**
@@ -79,8 +94,10 @@ class NotificationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Notification $notification)
     {
-        //
+        $notification->delete();
+
+        return redirect ()->action('NotificationsController@index')->with('correct', 'Notification verwijderd');
     }
 }

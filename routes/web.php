@@ -47,6 +47,9 @@ Route::get('/channels/{channel}/destroy', 'ChannelsController@destroy');
 
 Route::resource('/notifications', 'NotificationsController');
 Route::get('/notifications', 'NotificationsController@index');
+Route::get('/notifications/create', 'NotificationsController@create');
+Route::get('/notifications/{notification}', 'NotificationsController@show');
+Route::get('/notifications/{notification}/edit', 'NotificationsController@edit');
 
 Route::resource('/reactions', 'ReactionsController');
 Route::get('/reactions', 'ReactionsController@index');
