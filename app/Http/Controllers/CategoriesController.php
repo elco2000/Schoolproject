@@ -15,7 +15,6 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
         $categories = Category::all();
         return view('categories.index', compact('categories'));
     }
@@ -27,7 +26,6 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
         return view('categories.create');
     }
 
@@ -37,7 +35,7 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategoryPost $request)
     {
 //        $validated = $request->validated();
 
