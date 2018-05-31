@@ -51,6 +51,12 @@ Route::get('/notifications/create', 'NotificationsController@create');
 Route::get('/notifications/{notification}', 'NotificationsController@show');
 Route::get('/notifications/{notification}/edit', 'NotificationsController@edit');
 
+Route::resource('/notificationtypes', 'NotificationtypesController');
+Route::get('/notificationtypes', 'NotificationtypesController@index');
+Route::get('/notificationtypes/create', 'NotificationtypesController@create');
+Route::get('/notificationtypes/{notification}', 'NotificationtypesController@show');
+Route::get('/notificationtypes/{notification}/edit', 'NotificationtypesController@edit');
+
 Route::resource('/reactions', 'ReactionsController');
 Route::get('/reactions', 'ReactionsController@index');
 Route::get('/reactions/create', 'ReactionsController@create');
