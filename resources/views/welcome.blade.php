@@ -83,10 +83,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{route('channels.index')}}">Channels</a>
-                    <a href="{{route('categories.index')}}">Categories</a>
-                    <a href="{{route('videos.index')}}">Videos</a>
-                    <a href="{{route('reactions.index')}}">Reactions</a>
+                    <a href="{!! url('channels'); !!}">Channels</a>
+                    <a href="{!! url('categories'); !!}">Categories</a>
+                    <a href="{!! url('videos'); !!}">Videos</a>
+                    <a href="{!! url('reactions'); !!}">Reactions</a>
                 </div>
             </div>
         </div>
