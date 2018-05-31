@@ -14,6 +14,10 @@
     {!! Form::url('videoUrl', $video->videoUrl, array('class' => 'form-control', 'rows' => '1')) !!}
 </div>
 <div class="form-group">
+    {!! Form::label('channel_id', ('channel_id')); !!}
+    {!! Form::url('channel_id', $video->channel_id, array('class' => 'form-control', 'rows' => '1')) !!}
+</div>
+<div class="form-group">
     {!! Form::submit('Submit!', array('class' => 'btn btn-default')); !!}
     {!! Form::close() !!}
 </div>

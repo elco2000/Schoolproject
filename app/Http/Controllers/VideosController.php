@@ -38,6 +38,7 @@ class VideosController extends Controller
         $video->title = $request['title'];
         $video->description = $request['description'];
         $video->videoUrl = $request['videoUrl'];
+        $video->channel_id = $request['channel_id'];
         $video->save();
         return redirect()->action('VideosController@index')->with('correct', 'Video gemaakt');
     }
@@ -74,6 +75,7 @@ class VideosController extends Controller
         $video->title = $request['title'];
         $video->description = $request['description'];
         $video->videoUrl = $request['videoUrl'];
+        $video->channel_id = $request['channel_id'];
         $video->save();
         return redirect ()->action('VideosController@index')->with('correct', 'Video gewijzigd');
     }
