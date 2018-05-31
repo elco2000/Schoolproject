@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class NotificationsTableSeeder extends Seeder
+class NotificationtypesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class NotificationsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Notification::class, 10)->create();
+        factory(App\Notificationtype::class, 10)->create();
     }
 }

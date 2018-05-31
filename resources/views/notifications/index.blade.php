@@ -7,3 +7,5 @@
         <br>
     @endforeach
 </ul>
+
+<a href="{{route('notificationtypes.index')}}">List of notification types</a>

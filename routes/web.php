@@ -43,6 +43,7 @@ Route::get('/channels', 'ChannelsController@index');
 Route::get('/channels/create', 'ChannelsController@create');
 Route::get('/channels/{channel}/edit', 'ChannelsController@edit');
 Route::get('/channels/{channel}', 'ChannelsController@show');
+Route::get('/channels/{channel}/destroy', 'ChannelsController@destroy');
 
 Route::resource('/notifications', 'NotificationsController');
 Route::get('/notifications', 'NotificationsController@index');

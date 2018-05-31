@@ -7,3 +7,5 @@
         <br>
     @endforeach
 </ul>
+
+<a href="{{route('genres.index')}}">List Genres</a>

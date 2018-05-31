@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NotificationsTableSeeder::class);
         $this->call(ReactionsTableSeeder::class);
         $this->call(VideosTableSeeder::class);
+        $this->call(NotificationtypesTableSeeder::class);
     }
 }
