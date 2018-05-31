@@ -86,7 +86,7 @@
                     <a href="{!! url('channels'); !!}">Channels</a>
                     <a href="{!! url('categories'); !!}">Categories</a>
                     <a href="{!! url('videos'); !!}">Videos</a>
-                    <a href="{!! url('reactions'); !!}">Reactions</a>
+                    <a href="{!! url('notifications'); !!}">Notifications</a>
                 </div>
             </div>
         </div>
