@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreGenrePost;
 use App\Genre;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,7 @@ class GenresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreGenrePost $request)
     {
         $genre = new Genre();
         $genre->name = $request['name'];

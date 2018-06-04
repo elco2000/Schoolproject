@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Notificationtype;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreNotificationtypePost;
 
 class NotificationtypesController extends Controller
 {
