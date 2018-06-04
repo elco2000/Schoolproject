@@ -17,3 +17,5 @@
 </ul>
 
 <a href="{{('genres')}}">List Genres</a>
+
+<a href="{{URL::to('')}}"><button class="btn btn-primary" type="submit">go back to homepage</button></a>

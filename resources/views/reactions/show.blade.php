@@ -4,3 +4,5 @@
     <p>{{$reaction->channel_id}}</p>
 
 </div>
+
+<a href="{{URL::to('/reactions')}}"><button class="btn btn-primary" type="submit">go back to reactions</button></a>

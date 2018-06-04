@@ -10,3 +10,5 @@
         <li>{{$video->channel_id}}</li>
 
 </ul>
+
+<a href="{{URL::to('/videos')}}"><button class="btn btn-primary" type="submit">go back to videos</button></a>

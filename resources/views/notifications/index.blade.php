@@ -7,7 +7,7 @@
         <h4>{{$notification->id}}
             <a href="notifications/{{$notification->id}}">{{$notification->name}}<br></a></h4>
         <li> {{$notification->text}}<br></li>
-                <li>Type: {{$notification->notificationtypes['name']}}
+                <li>Type: {{$notification->notificationtypes['name']}} <br>
 
         <a href="{{URL::to('notifications/'.$notification->id.'/edit')}}"><button class="btn btn-primary" type="submit">Edit</button></a>
         {{ Form::open(array('url' => 'notifications/'.$notification->id,  'class' => 'pull-right')) }}
@@ -21,3 +21,6 @@
 </ul>
 
 <a href="{{('notificationtypes')}}">List of notification types</a>
+<br>
+<br>
+<a href="{{URL::to('')}}"><button class="btn btn-primary" type="submit">go back to homepage</button></a>

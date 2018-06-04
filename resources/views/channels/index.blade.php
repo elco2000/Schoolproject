@@ -21,4 +21,6 @@
     @endforeach
 </ul>
 
+<a href="{{URL::to('')}}"><button class="btn btn-primary" type="submit">go back to homepage</button></a>
+
 <a href="{!! url('reactions'); !!}">Reactions</a>
