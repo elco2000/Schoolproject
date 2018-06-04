@@ -20,3 +20,5 @@
 
     @endforeach
 </ul>
+
+<a href="{!! url('reactions'); !!}">Reactions</a>
