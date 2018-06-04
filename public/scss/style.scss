@@ -1,0 +1,39 @@
+// Variable
+$lightgrey: #ddd;
+$pixel: 1px;
+
+body {
+  margin: 0;
+}
+
+.normaltabel tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.normaltabel {
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    border: $pixel solid $lightgrey;
+    padding: 3px;
+    text-align: left;
+  }
+
+  th {
+    @extend td;
+    color: #062c33;
+    background-color: #ff0066;
+  }
+
+}
+
+.tablebutton {
+  background-color: #ff0066;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+}
+
