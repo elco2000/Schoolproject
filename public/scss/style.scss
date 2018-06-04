@@ -11,8 +11,9 @@ body {
 }
 
 .normaltabel {
-  width: 100%;
+  width: 80%;
   border-collapse: collapse;
+  margin: 10px;
 
   td {
     border: $pixel solid $lightgrey;
