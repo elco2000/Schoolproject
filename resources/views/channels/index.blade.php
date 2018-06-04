@@ -2,10 +2,10 @@
 
 <ul>
     @foreach($channels as $channel)
-        <li>{{$channel->name}}</li>
-        <li>{{$channel->logoUrl}}</li>
-        <li>{{$channel->channelUrl}}</li>
-        <li>{{$channel->identertainer}}</li>
+        <li><a href="channels/{{$channel->id}}">Name: {{$channel->name}}</a></li>
+        <li>Logo Url: {{$channel->logoUrl}}</li>
+        <li>Channel Url: {{$channel->channelUrl}}</li>
+        {{--<li>{{$channel->identertainer}}</li>--}}
         <br>
     @endforeach
 </ul>

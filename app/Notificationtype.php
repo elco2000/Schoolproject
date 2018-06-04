@@ -8,4 +8,8 @@ class Notificationtype extends Model
 {
     protected $fillable = ['name'];
     protected $guarded = [];
+
+    public function notification() {
+        return $this->hasMany(Notification::class);
+    }
 }

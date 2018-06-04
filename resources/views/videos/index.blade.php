@@ -5,10 +5,10 @@
 
 <ul>
         @foreach($videos as $video)
-                <li>{{$video->title}}</li>
-                <li>{{$video->description}}</li>
-                <li>{{$video->videoUrl}}</li>
-                <li>{{$video->channel_id}}</li>
+                <li>Title: {{$video->title}}</li>
+                <li>Description: {{$video->description}}</li>
+                <li>Video Url: {{$video->videoUrl}}</li>
+                <li>Channel: {{$video->channel_id}}</li>
                 <br>
         @endforeach
 </ul>

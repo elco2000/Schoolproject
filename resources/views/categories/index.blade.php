@@ -2,8 +2,8 @@
 
 <ul>
     @foreach($categories as $category)
-        <li>{{$category->name}}</li>
-        <li>{{$category->description}}</li>
+                <li><a href="categories/{{$category->id}}">Name: {{$category->name}}</a></li>
+        <li>Description: {{$category->description}}</li>
         <br>
     @endforeach
 </ul>

@@ -2,10 +2,13 @@
 
 <ul>
     @foreach($notifications as $notification)
-        <li>{{$notification->name}}</li>
-        <li>{{$notification->text}}</li>
+        <li>Name: {{$notification->name}}</li>
+        <li>Text: {{$notification->text}}</li>
+        <li>Type: {{$notification->notificationtypes['name']}}
+        </li>
         <br>
     @endforeach
+
 </ul>
 
 <a href="{!! url('notificationtypes'); !!}">List of notification types</a>
