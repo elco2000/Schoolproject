@@ -22,7 +22,7 @@
         <td> {{$channel->logoUrl}}<br></td>
         <td>{{$channel->channelUrl}}<br></td>
         {{--<li>{{$channel->identertainer}}</li>--}}
-            <td><a href="{{URL::to('channels/'.$channel->id.'/edit')}}"><br><button class="tablebutton" type="submit">Edit</button></a></td>
+            <td><a href="{{URL::to('channels/'.$channel->id.'/edit')}}"><button class="tablebutton" type="submit">Edit</button></a></td>
         <td>{{ Form::open(array('url' => 'channels/'.$channel->id,  'class' => 'pull-right')) }}
         {{ Form::hidden('_method', 'DELETE') }}
         {{ Form::submit('Delete', array('class' => 'tablebutton')) }}
