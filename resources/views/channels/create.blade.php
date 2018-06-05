@@ -1,23 +1,38 @@
+@extends('layouts.master')
+
+@section('content')
+
 {!! Form::open(array('url' => 'channels', 'method' => 'POST')) !!}
 {!! Form::token() !!}
 
-<div class="form-group">
-    {!! Form::label('name', 'Name'); !!}
-    {!! Form::text('name', '', array('class' => 'form-control')) !!}
+<div class="">
+    {!! Form::label('name', 'Name'); !!}<br>
+    {!! Form::text('name', '', array('class' => '')) !!}
 </div>
-<div class="form-group">
-    {!! Form::label('logoUrl', 'logoUrl'); !!}
-    {!! Form::text('logoUrl', '', array('class' => 'form-control')) !!}
+<div class="">
+    {!! Form::label('logoUrl', 'logoUrl'); !!}<br>
+    {!! Form::text('logoUrl', '', array('class' => '')) !!}
 </div>
-<div class="form-group">
-    {!! Form::label('channelUrl', 'channelUrl'); !!}
-    {!! Form::text('channelUrl', '', array('class' => 'form-control')) !!}
+<div class="">
+    {!! Form::label('channelUrl', 'channelUrl'); !!}<br>
+    {!! Form::text('channelUrl', '', array('class' => '')) !!}
 </div>
-<div class="form-group">
+<div class="missingform">
     {!! Form::label('identertainer', 'identertainer'); !!}
-    {!! Form::text('identertainer', '', array('class' => 'form-control')) !!}
+    {!! Form::text('identertainer', '4', array('class' => '')) !!}
 </div>
-<div class="form-group">
-    {!! Form::submit('submit!', array('class' => 'btn btn-default')); !!}
+<div class="">
+    {!! Form::submit('submit!', array('class' => 'tablebutton')); !!}
     {!! Form::close() !!}
 </div>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+    @endsection

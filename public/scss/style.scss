@@ -3,7 +3,7 @@ $lightgrey: #ddd;
 $pixel: 1px;
 
 body {
-  margin: 0;
+  margin: $pixel;
 }
 
 .normaltabel tr:nth-child(even) {
@@ -38,3 +38,6 @@ body {
   border-radius: 12px;
 }
 
+.missingform {
+  display: none;
+}

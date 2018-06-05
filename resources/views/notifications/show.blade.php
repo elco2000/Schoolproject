@@ -1,10 +1,14 @@
+@extends('layouts.master')
+
+@section('content')
+
 <h1>notification</h1>
 
-<ul>
 
-    <li>{{$notification->name}}</li>
-    <li>{{$notification->text}}</li>
 
-</ul>
+    <p>Name: {{$notification->name}}</p>
+    <p>Text: {{$notification->text}}</p>
 
-<a href="{{URL::to('/notifications')}}"><button class="btn btn-primary" type="submit">go back to notifications</button></a>
+
+<a href="{{URL::to('/notifications')}}"><button class="tablebutton" type="submit">go back to notifications</button></a>
+    @endsection

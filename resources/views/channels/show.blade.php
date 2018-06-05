@@ -1,3 +1,7 @@
+@extends('layouts.master')
+
+@section('content')
+
 <div class="blog-post">
     <h2 class="blog-post-title">Channel name: {{$channel->name}}</h2>
     <p>Logo Url: {{$channel->logoUrl}}</p>
@@ -20,4 +24,6 @@
 
 </div>
 
-<a href="{{URL::to('/channels')}}"><button class="btn btn-primary" type="submit">go back to channels</button></a>
+<a href="{{URL::to('/channels')}}"><button class="tablebutton" type="submit">go back to channels</button></a>
+
+@endsection
