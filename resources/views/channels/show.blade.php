@@ -19,3 +19,5 @@
 
 
 </div>
+
+<a href="{{URL::to('/channels')}}"><button class="btn btn-primary" type="submit">go back to channels</button></a>

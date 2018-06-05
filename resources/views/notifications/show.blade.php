@@ -6,3 +6,5 @@
     <li>{{$notification->text}}</li>
 
 </ul>
+
+<a href="{{URL::to('/notifications')}}"><button class="btn btn-primary" type="submit">go back to notifications</button></a>
