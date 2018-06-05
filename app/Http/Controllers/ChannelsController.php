@@ -90,7 +90,7 @@ class ChannelsController extends Controller
         $channel->identertainer = $request['identertainer'];
         $channel->save();
 
-//        return redirect()->action('MemesController@index')->with('correct', 'Meme gewijzigd');
+        return redirect()->action('ChannelController@index')->with('correct', 'Channel gewijzigd');
     }
 
     /**
@@ -103,6 +103,6 @@ class ChannelsController extends Controller
     {
         //
         $channel->delete();
-//        return redirect()->action('MemesController@index')->with('correct', 'Meme verwijderd');
+       return redirect()->action('ChannelController@index')->with('correct', 'Chanel verwijderd');
     }
 }

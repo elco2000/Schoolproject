@@ -84,6 +84,7 @@ class ReactionsController extends Controller
         $reaction->account_idaccount = $request['account_idaccount'];
         $reaction->idchannel = $request['channel_id'];
         $reaction->save();
+        return redirect ()->action('ReactionsController@index')->with('correct', 'Video gewijzigd');
     }
 
     /**
@@ -96,5 +97,6 @@ class ReactionsController extends Controller
     {
         //
         $reaction->delete();
+        return redirect ()->action('ReactionsController@index')->with('correct', 'Reaction verwijderd');
     }
 }
