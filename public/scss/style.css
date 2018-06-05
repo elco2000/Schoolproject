@@ -1,13 +1,12 @@
 body {
   margin: 1px; }
 
-.normaltabel tr:nth-child(even) {
-  background-color: #f2f2f2; }
-
 .normaltabel {
   width: 80%;
   border-collapse: collapse;
   margin: 10px; }
+  .normaltabel tr:nth-child(even) {
+    background-color: #f2f2f2; }
   .normaltabel td, .normaltabel th {
     border: 1px solid #ddd;
     padding: 3px;

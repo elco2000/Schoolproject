@@ -13,6 +13,10 @@
     {!! Form::label('text', ('text')); !!}<br>
     {!! Form::textarea('text', $notification->text, array('class' => 'form-control', 'rows' => '3')) !!}
 </div>
+<div class="missingform">
+    {!! Form::label('notificationtype_id', ('notificationtype_id')); !!}<br>
+    {!! Form::textarea('notificationtype_id', $notification->notificationtype_id, array('class' => 'form-control', 'rows' => '3')) !!}
+</div>
 
 <div class="form-group">
     {!! Form::submit('Submit!', array('class' => 'tablebutton')); !!}
