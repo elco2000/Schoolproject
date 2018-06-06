@@ -1,3 +1,7 @@
+@extends('layouts.master')
+
+@section('content')
+
 <div class="blog-post">
     <h2 class="blog-post-title">{{$category->name}}</h2>
     <p>{{$category->description}}</p>
@@ -13,4 +17,5 @@
     @endforeach
 </div>
 
-<a href="{{URL::to('/categories')}}"><button class="btn btn-primary" type="submit">go back to categories</button></a>
+<a href="{{URL::to('/categories')}}"><button class="tablebutton" type="submit">go back to categories</button></a>
+    @endsection

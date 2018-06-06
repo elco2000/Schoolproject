@@ -42,7 +42,6 @@ class CategoriesController extends Controller
         $category = new Category();
         $category->name = $request['name'];
         $category->description = $request['description'];
-        $category->genre_id = $request['genre_id'];
         $category->save();
 
         $category = Category::all();
@@ -84,7 +83,6 @@ class CategoriesController extends Controller
 
         $category->name = $request['name'];
         $category->description = $request['description'];
-        $category->genre_id = $request['genre_id'];
         $category->save();
 
         return redirect()->action('CategoriesController@index')->with('correct', 'Category Updated');

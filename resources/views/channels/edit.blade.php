@@ -1,28 +1,30 @@
+@extends('layouts.master')
+
+@section('content')
+
 {!! Form::open(array('url' => 'channels/'.$channel->id, 'method' => 'PATCH')) !!}
 {!! Form::token() !!}
 
 <div class="form-group">
-    {!! Form::label('name', 'Name'); !!}
+    {!! Form::label('name', 'Name'); !!}<br>
     {!! Form::text('name', $channel->name, array('class' => 'form-control')) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('logoUrl', 'logoUrl'); !!}
+    {!! Form::label('logoUrl', 'logoUrl'); !!}<br>
     {!! Form::text('logoUrl', $channel->logoUrl, array('class' => 'form-control')) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('channelUrl', 'channelUrl'); !!}
+    {!! Form::label('channelUrl', 'channelUrl'); !!}<br>
     {!! Form::text('channelUrl', $channel->channelUrl, array('class' => 'form-control')) !!}
 </div>
-<div class="form-group">
+<div class="missingform">
     {!! Form::label('identertainer', 'identertainer'); !!}
     {!! Form::text('identertainer', $channel->identertainer, array('class' => 'form-control')) !!}
 </div>
 <div class="form-group">
-    {!! Form::submit('submit!', array('class' => 'btn btn-default')); !!}
+    {!! Form::submit('submit!', array('class' => 'tablebutton')); !!}
     {!! Form::close() !!}
 </div>
-
-<a href="{{URL::to('/channels')}}"><button class="btn btn-primary" type="submit">go back to channels</button></a>
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -33,3 +35,7 @@
         </ul>
     </div>
 @endif
+
+<a href="{{URL::to('/channels/')}}"><button class="tablebutton" type="submit">Go back to channel</button></a>
+
+    @endsection

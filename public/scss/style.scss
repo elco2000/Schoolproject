@@ -1,19 +1,23 @@
 // Variable
 $lightgrey: #ddd;
+$verylightgrey: #f2f2f2;
+$lightblack: #062c33;
+$pink: #ff0066;
 $pixel: 1px;
 
-body {
-  margin: 0;
-}
 
-.normaltabel tr:nth-child(even) {
-  background-color: #f2f2f2;
+body {
+  margin: $pixel;
 }
 
 .normaltabel {
   width: 80%;
   border-collapse: collapse;
   margin: 10px;
+
+  & tr:nth-child(even) {
+    background-color: $verylightgrey;
+  }
 
   td {
     border: $pixel solid $lightgrey;
@@ -23,14 +27,14 @@ body {
 
   th {
     @extend td;
-    color: #062c33;
-    background-color: #ff0066;
+    color: $lightblack;
+    background-color: $pink;
   }
 
 }
 
 .tablebutton {
-  background-color: #ff0066;
+  background-color: $pink;
   border: none;
   padding: 10px;
   text-align: center;
@@ -38,3 +42,6 @@ body {
   border-radius: 12px;
 }
 
+.missingform {
+  display: none;
+}
