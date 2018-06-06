@@ -15,9 +15,21 @@
 </div>
 <div class="form-group">
     {!! Form::label('channel_id', ('channel_id')); !!}
-    {!! Form::url('channel_id', $video->channel_id, array('class' => 'form-control', 'rows' => '1')) !!}
+    {!! Form::number('channel_id', $video->channel_id, array('class' => 'form-control', 'rows' => '1')) !!}
 </div>
 <div class="form-group">
     {!! Form::submit('Submit!', array('class' => 'btn btn-default')); !!}
     {!! Form::close() !!}
 </div>
+
+<a href="{{URL::to('/videos')}}"><button class="btn btn-primary" type="submit">go back to videos</button></a>
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif

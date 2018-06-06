@@ -19,3 +19,5 @@
             </ul>
         </div>
     @endif
+
+    <a href="{{URL::to('/genres')}}"><button class="btn btn-primary" type="submit">go back to genres</button></a>

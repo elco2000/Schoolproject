@@ -47,7 +47,7 @@ class ChannelsController extends Controller
         $channel->identertainer = $request['identertainer'];
         $channel->save();
 
-//        return redirect()->action('ChannelsController@index')->with('correct', 'Channel aangemaakt!');
+        return redirect()->action('ChannelsController@index')->with('correct', 'Channel aangemaakt!');
     }
 
     /**

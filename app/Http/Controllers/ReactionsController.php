@@ -42,7 +42,7 @@ class ReactionsController extends Controller
         $channel = new Reaction();
         $channel->text = $request['text'];
         $channel->account_idaccount = $request['account_idaccount'];
-        $channel->idchannel = $request['channel_id'];
+        $channel->channel_id = $request['channel_id'];
         $channel->save();
     }
 
@@ -82,7 +82,7 @@ class ReactionsController extends Controller
         //
         $reaction->text = $request['text'];
         $reaction->account_idaccount = $request['account_idaccount'];
-        $reaction->idchannel = $request['channel_id'];
+        $reaction->channel_id = $request['channel_id'];
         $reaction->save();
         return redirect ()->action('ReactionsController@index')->with('correct', 'Video gewijzigd');
     }
