@@ -43,28 +43,40 @@
         </nav>
         <aside class="project-aside">
             <div class="advert">
-                <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
-                <h4 class="advert-title">Advert Title</h4>
+                <a href="#">
+                    <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
+                    <h4 class="advert-title">Advert Title</h4>
+                </a>
             </div>
             <div class="advert">
-                <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
-                <h4 class="advert-title">Advert Title</h4>
+                <a href="#">
+                    <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
+                    <h4 class="advert-title">Advert Title</h4>
+                </a>
             </div>
             <div class="advert">
-                <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
-                <h4 class="advert-title">Advert Title</h4>
+                <a href="#">
+                    <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
+                    <h4 class="advert-title">Advert Title</h4>
+                </a>
             </div>
             <div class="advert">
-                <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
-                <h4 class="advert-title">Advert Title</h4>
+                <a href="#">
+                    <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
+                    <h4 class="advert-title">Advert Title</h4>
+                </a>
             </div>
             <div class="advert">
-                <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
-                <h4 class="advert-title">Advert Title</h4>
+                <a href="#">
+                    <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
+                    <h4 class="advert-title">Advert Title</h4>
+                </a>
             </div>
             <div class="advert">
-                <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
-                <h4 class="advert-title">Advert Title</h4>
+                <a href="#">
+                    <img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">
+                    <h4 class="advert-title">Advert Title</h4>
+                </a>
             </div>
         </aside>
         <main role="main">

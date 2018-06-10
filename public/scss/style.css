@@ -2,11 +2,10 @@ body {
   margin: 1px; }
 
 .normaltabel {
-  width: 80%;
+  width: 100%;
   border-collapse: collapse;
-  margin: 10px; }
-  .normaltabel tr:nth-child(even) {
-    background-color: #f2f2f2; }
+  margin: 10px;
+  background-color: #f2f2f2; }
   .normaltabel td, .normaltabel th {
     border: 1px solid #ddd;
     padding: 3px;
