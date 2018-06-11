@@ -37,9 +37,13 @@
                 <li><a href="{{url('/')}}">Home</a></li>
                 <li><a href="{{url('categories')}}">Categories</a></li>
                 <li><a href="{{url('channels')}}">Channels</a></li>
+                {{--<li><a href="{{url('genres')}}">Genres</a></li>--}}
+                <li><a href="{{url('notifications')}}">Notifications</a></li>
+                {{--<li><a href="{{url('reactions')}}">Reactions</a></li>--}}
+                {{--<li><a href="{{url('videos')}}">Videos</a></li>--}}
             </ul>
-            <button>Log In</button>
-            <button>Register</button>
+            <button><a href="#">Log In</a></button>
+            <button><a href="#">Register</button>
         </nav>
         <aside class="project-aside">
             <div class="advert">

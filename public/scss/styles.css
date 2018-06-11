@@ -1,6 +1,6 @@
 body {
   height: 100%;
-  background-color: #2eb2ff; }
+  background: linear-gradient(to top right, #0d06ff, #ff800d); }
   body .container {
     background-color: #ddd;
     margin: 10px auto;
@@ -43,6 +43,12 @@ body {
       justify-content: space-around;
       align-items: stretch;
       padding: 5px; }
+      body .container .project-topnav button {
+        border-radius: 40%;
+        background-color: #2eb2ff; }
+        body .container .project-topnav button a {
+          color: black;
+          text-decoration: none; }
       body .container .project-topnav ul {
         margin: 0;
         padding: 0;
@@ -83,7 +89,7 @@ body {
         body .container .project-aside .advert a {
           text-decoration: none; }
     body .container main {
-      background-color: #ff800d;
+      background-color: #0100a5;
       padding: 10px;
       grid-column-start: 1;
       grid-column-end: 4;
@@ -93,7 +99,10 @@ body {
       flex-direction: row;
       justify-content: space-around;
       flex-wrap: wrap;
-      align-items: center; }
+      align-items: center;
+      color: white; }
+      body .container main td {
+        color: black; }
       body .container main .main-notification {
         padding: 10px;
         text-align: center; }

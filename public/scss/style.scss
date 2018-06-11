@@ -3,6 +3,7 @@ $lightgrey: #ddd;
 $verylightgrey: #f2f2f2;
 $lightblack: #062c33;
 $pink: #ff0066;
+$logocolor: #2eb2ff;
 $pixel: 1px;
 
 
@@ -29,13 +30,13 @@ body {
   th {
     @extend td;
     color: $lightblack;
-    background-color: $pink;
+    background-color: $logocolor;
   }
 
 }
 
 .tablebutton {
-  background-color: $pink;
+  background-color: $logocolor;
   border: none;
   padding: 10px;
   text-align: center;

@@ -7,8 +7,8 @@
     <tr class="normaltr">
         <th>Id</th>
         <th>Name</th>
-        <th>LogoUrl</th>
-        <th>ChannelUrl</th>
+        <th>Logo</th>
+        <th>Channel Link</th>
         <th></th>
         <th></th>
     </tr>
@@ -17,8 +17,8 @@
         <tr class="normaltr">
             <td>{{$channel->id}}</td>
             <td><a href="channels/{{$channel->id}}">{{$channel->name}}</a></td>
-            <td> {{$channel->logoUrl}}<br></td>
-            <td>{{$channel->channelUrl}}<br></td>
+            <td> <img src="{{$channel->logoUrl}}" alt="Missing Logo"><br></td>
+            <td><a href="{{$channel->channelUrl}}" target="_blank">Channel Link</a><br></td>
             {{--<li>{{$channel->identertainer}}</li>--}}
                 <td><a href="{{URL::to('channels/'.$channel->id.'/edit')}}"><button class="tablebutton" type="submit">Edit</button></a></td>
             <td>{{ Form::open(array('url' => 'channels/'.$channel->id,  'class' => 'pull-right')) }}
@@ -30,7 +30,7 @@
     @endforeach
 
 </table>
-<a href="{{URL::to('channels/create')}}"><button class="tablebutton" type="submit">Make new channel</button></a>
+<a href="{{URL::to('channels/create')}}"><button class="tablebutton" type="submit">Post a new Channel</button></a>
 
 
 @endsection
