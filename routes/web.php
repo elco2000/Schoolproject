@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 
 
 
@@ -57,9 +61,27 @@ Route::get('/reactions/create', 'ReactionsController@create');
 Route::get('/reactions/{reaction}', 'ReactionsController@show');
 Route::get('/reactions/{reaction}/edit', 'ReactionsController@edit');
 
-Route::resource('/notificationtypes', 'notificationtypesController');
-Route::get('/notificationtypes', 'notificationtypesController@index');
-Route::get('/notificationtypes/create', 'notificationtypesController@create');
-Route::get('/notificationtypes/{notificationtype}', 'notificationtypesController@show');
-Route::get('/notificationtypes/{notificationtype}/edit', 'notificationtypesController@edit');
+Route::resource('/notificationtypes', 'NotificationtypesController');
+Route::get('/notificationtypes', 'NotificationtypesController@index');
+Route::get('/notificationtypes/create', 'NotificationtypesController@create');
+Route::get('/notificationtypes/{notificationtype}', 'NotificationtypesController@show');
+Route::get('/notificationtypes/{notificationtype}/edit', 'NotificationtypesController@edit');
+
+
+Auth::routes();
+
+Route::resource('users', 'UserController');
+Route::get('/users', 'UserController@index');
+Route::get('/users/create', 'UserController@create');
+Route::get('/users/{user}/edit', 'UserController@edit');
+
+Route::resource('roles', 'RoleController');
+Route::get('roles', 'RoleController@index');
+Route::get('roles/create', 'RoleController@create');
+Route::get('roles/{role}/edit', 'RoleController@edit');
+
+Route::resource('permissions', 'PermissionController');
+Route::get('/permissions', 'PermissionController@index');
+Route::get('/permissions/create', 'PermissionController@create');
+Route::get('/permissions/{permission}/edit', 'PermissionController@edit');
 
