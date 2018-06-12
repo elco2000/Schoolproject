@@ -1,14 +1,14 @@
+@extends('layouts.master')
 
+@section('content')
 
-<h1>Videos</h1>
+    <div class="blog-post">
+        <h2 class="blog-post-title"><b>Reactions: </b>{{$video->title}}</h2>
+        <p>{{$video->description}}</p>
+        <p>{{$video->videoUrl}}</p><br>
+        <p>{{$video->channel_id}}</p>
+    </div>
 
-<ul>
+    <a href="{{URL::to('/videos')}}"><button class="tablebutton" type="submit">Back</button></a>
 
-        <li>{{$video->title}}</li>
-        <li>{{$video->description}}</li>
-        <li>{{$video->videoUrl}}</li>
-        <li>{{$video->channel_id}}</li>
-
-</ul>
-
-<a href="{{URL::to('/videos')}}"><button class="btn btn-primary" type="submit">go back to videos</button></a>
+@endsection
