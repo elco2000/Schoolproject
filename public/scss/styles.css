@@ -61,7 +61,7 @@ body {
         body .container .project-topnav ul li {
           width: 20%;
           text-align: center;
-          list-style: none; }
+          list-style-type: none; }
           body .container .project-topnav ul li a {
             display: block;
             color: white;

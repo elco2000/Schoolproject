@@ -41,9 +41,29 @@
                 <li><a href="{{url('notifications')}}">Notifications</a></li>
                 {{--<li><a href="{{url('reactions')}}">Reactions</a></li>--}}
                 {{--<li><a href="{{url('videos')}}">Videos</a></li>--}}
+
+            @if (Route::has('login'))
+                    @auth
+                                <li>
+                                    @role('Admin') {{-- Laravel-permission blade helper --}}
+                                    <a href="{{url('users')}}"><button><i class=""></i>Admin</button></a>
+                                    @endrole
+                                </li>
+                                <li>
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <button> Logout </button>
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                    @else
+                        <li><a href="{{ route('login') }}"><button>Login</button></a></li>
+                        <li><a href="{{ route('register') }}"><button>Register</button></a></li>
+                    @endauth
+            @endif
             </ul>
-            <button><a href="#">Log In</a></button>
-            <button><a href="#">Register</button>
         </nav>
         <aside class="project-aside">
             <div class="advert">
