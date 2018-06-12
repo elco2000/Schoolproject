@@ -1,6 +1,8 @@
 body {
   height: 100%;
-  background: linear-gradient(to top right, #0d06ff, #ff800d); }
+  background: linear-gradient(to top right, #0d06ff, #ff800d);
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
   body .container {
     background-color: #ddd;
     margin: 10px auto;
@@ -61,7 +63,7 @@ body {
         body .container .project-topnav ul li {
           width: 20%;
           text-align: center;
-          list-style: none; }
+          list-style-type: none; }
           body .container .project-topnav ul li a {
             display: block;
             color: white;
