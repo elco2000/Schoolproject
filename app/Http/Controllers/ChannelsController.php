@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Channel;
-//use App\Http\Requests\StoreChannelPost;
+use App\Http\Requests\StoreChannelPost;
 use Illuminate\Http\Request;
 
 class ChannelsController extends Controller
@@ -37,7 +37,7 @@ class ChannelsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreChannelPost $request)
     {
         //
         $channel = new Channel();
@@ -81,7 +81,7 @@ class ChannelsController extends Controller
      * @param  \App\Channel  $channel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Channel $channel)
+    public function update(StoreChannelPost $request, Channel $channel)
     {
         //
         $channel->name = $request['name'];
