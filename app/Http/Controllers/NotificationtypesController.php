@@ -92,6 +92,7 @@ class NotificationtypesController extends Controller
     public function destroy(Notificationtype $notificationtype)
     {
         $notificationtype->delete();
+
         return redirect()->action('NotificationtypesController@index')->with('correct', 'Notification Type Removed');
     }
 }

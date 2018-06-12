@@ -27,4 +27,5 @@
         @endforeach
     </table>
 <a href="{{URL::to('categories/create')}}"><button class="tablebutton" type="submit">Make new category</button></a>
+
 @endsection

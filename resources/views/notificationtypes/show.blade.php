@@ -1,5 +1,11 @@
-<div class="blog-post">
-    {{$notificationtype->name}}
-</div>
+@extends('layouts.master')
 
-<a href="{{URL::to('/notificationtypes')}}"><button class="btn btn-primary" type="submit">go back to notificationtypes</button></a>
+@section('content')
+
+    <div class="blog-post">
+        <h2 class="blog-post-title"><b>Notification Type Name:</b> {{$notificationtype->name}}</h2>
+    </div>
+
+    <a href="{{URL::to('/notificationtypes')}}"><button class="tablebutton" type="submit">Back</button></a>
+
+@endsection

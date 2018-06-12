@@ -14,7 +14,7 @@
         {!! Form::textarea('description', $category->description, array('class' => 'form-control', 'rows' => '3')) !!}
     </div>
     <div class="form-group">
-        {!! Form::submit('Submit!', array('class' => 'tablebutton')); !!}
+        {!! Form::submit('Submit', array('class' => 'tablebutton')); !!}
         {!! Form::close() !!}
     </div>
 
@@ -30,6 +30,6 @@
         </div>
     @endif
 
-    <a href="{{URL::to('/categories/')}}"><button class="tablebutton" type="submit">Go back to categories</button></a>
+    <a href="{{URL::to('/categories/')}}"><button class="tablebutton" type="submit">Back</button></a>
 
     @endsection

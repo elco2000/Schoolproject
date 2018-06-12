@@ -10,19 +10,19 @@
     {!! Form::text('name', '', array('class' => '')) !!}
 </div>
 <div class="">
-    {!! Form::label('logoUrl', 'logoUrl'); !!}<br>
+    {!! Form::label('logoUrl', 'Web URL Logo'); !!}<br>
     {!! Form::text('logoUrl', '', array('class' => '')) !!}
 </div>
 <div class="">
-    {!! Form::label('channelUrl', 'channelUrl'); !!}<br>
+    {!! Form::label('channelUrl', 'Web URL YouTube/Twitch Channel'); !!}<br>
     {!! Form::text('channelUrl', '', array('class' => '')) !!}
 </div>
 <div class="missingform">
-    {!! Form::label('identertainer', 'identertainer'); !!}
+    {!! Form::label('identertainer', 'IDEntertainer'); !!}
     {!! Form::text('identertainer', '4', array('class' => '')) !!}
 </div>
 <div class="">
-    {!! Form::submit('submit!', array('class' => 'tablebutton')); !!}
+    {!! Form::submit('Submit', array('class' => 'tablebutton')); !!}
     {!! Form::close() !!}
 </div>
 
@@ -37,5 +37,7 @@
         </ul>
     </div>
 @endif
+
+<a href="{{URL::to('/channels/')}}"><button class="tablebutton" type="submit">Back</button></a>
 
     @endsection
