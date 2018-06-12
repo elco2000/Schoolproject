@@ -25,6 +25,9 @@
     {!! Form::submit('Submit', array('class' => 'tablebutton')); !!}
     {!! Form::close() !!}
 </div>
+
+<a href="{{URL::to('/channels/')}}"><button class="tablebutton" type="submit">Go back to channel</button></a>
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
