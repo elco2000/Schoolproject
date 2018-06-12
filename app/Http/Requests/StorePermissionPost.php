@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreVideoPost extends FormRequest
+class StorePermissionPost extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,8 @@ class StoreVideoPost extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:60',
-            'description' => 'required',
-            'videoUrl' => 'required'
+            'name' => 'required|max:60',
+
         ];
     }
-
 }
