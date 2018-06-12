@@ -30,6 +30,5 @@
         </div>
     @endif
 
-    <a href="{{URL::to('/categories/')}}"><button class="tablebutton" type="submit">Go back to Categories</button></a>
 
 @endsection
