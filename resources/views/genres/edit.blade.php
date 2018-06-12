@@ -1,3 +1,6 @@
+@extends('layouts.master')
+
+@section('content')
     {!! Form::open(array('url' => 'genres/'.$genre->id, 'method' => 'PATCH')) !!}
     {!! Form::token() !!}
 
@@ -19,3 +22,6 @@
             </ul>
         </div>
     @endif
+
+    <a href="{{URL::to('/genres/')}}"><button class="tablebutton" type="submit">Back</button></a>
+@endsection

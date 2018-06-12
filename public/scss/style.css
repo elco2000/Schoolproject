@@ -2,21 +2,20 @@ body {
   margin: 1px; }
 
 .normaltabel {
-  width: 80%;
+  width: 100%;
   border-collapse: collapse;
-  margin: 10px; }
-  .normaltabel tr:nth-child(even) {
-    background-color: #f2f2f2; }
+  margin: 10px;
+  background-color: #f2f2f2; }
   .normaltabel td, .normaltabel th {
     border: 1px solid #ddd;
     padding: 3px;
     text-align: left; }
   .normaltabel th {
     color: #062c33;
-    background-color: #ff0066; }
+    background-color: #2eb2ff; }
 
 .tablebutton {
-  background-color: #ff0066;
+  background-color: #2eb2ff;
   border: none;
   padding: 10px;
   text-align: center;

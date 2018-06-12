@@ -6,11 +6,11 @@
 {!! Form::token() !!}
 
 <div class="form-group">
-    {!! Form::label('name', ('name')); !!}<br>
+    {!! Form::label('name', ('Name')); !!}<br>
     {!! Form::text('name', '', array('class' => 'form-control')) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('text', ('text')); !!}<br>
+    {!! Form::label('text', ('Text')); !!}<br>
     {!! Form::textarea('text', '', array('class' => 'form-control', 'rows' => '3')) !!}
 </div>
 <div class="missingform">
@@ -19,7 +19,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::submit('Submit!', array('class' => 'tablebutton')); !!}
+    {!! Form::submit('Submit', array('class' => 'tablebutton')); !!}
     {!! Form::close() !!}
 </div>
 
@@ -33,4 +33,5 @@
     </div>
 @endif
 
+<a href="{{URL::to('/notifications/')}}"><button class="tablebutton" type="submit">Back</button></a>
 @endsection

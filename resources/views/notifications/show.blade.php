@@ -2,13 +2,11 @@
 
 @section('content')
 
-<h1>notification</h1>
+    <div class="blog-post">
+        <h2 class="blog-post-title"><b>Notification Name:</b> {{$notification->name}}</h2>
+        <p>{{$notification->text}}</p>
+    </div>
 
+    <a href="{{URL::to('/notifications')}}"><button class="tablebutton" type="submit">Back</button></a>
 
-
-    <p>Name: {{$notification->name}}</p>
-    <p>Text: {{$notification->text}}</p>
-
-
-<a href="{{URL::to('/notifications')}}"><button class="tablebutton" type="submit">go back to notifications</button></a>
-    @endsection
+@endsection

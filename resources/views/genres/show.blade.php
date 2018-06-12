@@ -1,6 +1,11 @@
-<div class="blog-post">
-    <h2 class="blog-post-title">{{$genre->name}}</h2>
-    <p class="blog-post-meta">April 4, 2018 by <a href="#">Stephan</a></p>
-</div>
+@extends('layouts.master')
 
-<a href="{{URL::to('/genres')}}"><button class="btn btn-primary" type="submit">go back to genres</button></a>
+@section('content')
+
+    <div class="blog-post">
+        <h2 class="blog-post-title"><b>Genre Name: </b>{{$genre->name}}</h2>
+    </div>
+
+    <a href="{{URL::to('/genres')}}"><button class="tablebutton" type="submit">Back</button></a>
+
+@endsection

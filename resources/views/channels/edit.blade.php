@@ -22,7 +22,7 @@
     {!! Form::text('identertainer', $channel->identertainer, array('class' => 'form-control')) !!}
 </div>
 <div class="form-group">
-    {!! Form::submit('submit!', array('class' => 'tablebutton')); !!}
+    {!! Form::submit('Submit', array('class' => 'tablebutton')); !!}
     {!! Form::close() !!}
 </div>
 
@@ -36,6 +36,6 @@
     </div>
 @endif
 
-<a href="{{URL::to('/channels/')}}"><button class="tablebutton" type="submit">Go back to channel</button></a>
+<a href="{{URL::to('/channels/')}}"><button class="tablebutton" type="submit">Back</button></a>
 
     @endsection

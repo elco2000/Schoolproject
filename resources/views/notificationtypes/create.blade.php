@@ -1,12 +1,16 @@
+@extends('layouts.master')
+
+@section('content')
+
     {!! Form::open(array('url' => 'notificationtypes', 'method' => 'POST')) !!}
     {!! Form::token() !!}
 
     <div class="form-group">
-        {!! Form::label('name', 'name'); !!}
+        {!! Form::label('name', ('Name')); !!}<br>
         {!! Form::text('name', '', array('class' => 'form-control')) !!}
     </div>
     <div class="form-group">
-        {!! Form::submit('Submit!', array('class' => 'btn btn-default')); !!}
+        {!! Form::submit('Submit', array('class' => 'tablebutton')); !!}
         {!! Form::close() !!}
     </div>
 
@@ -19,3 +23,6 @@
             </ul>
         </div>
     @endif
+
+    <a href="{{URL::to('/notificationtypes/')}}"><button class="tablebutton" type="submit">Back</button></a>
+@endsection
