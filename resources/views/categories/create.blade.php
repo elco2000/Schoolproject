@@ -18,6 +18,8 @@
         {!! Form::close() !!}
     </div>
 
+    <a href="{{URL::to('/categories')}}"><button class="btn btn-primary" type="submit">go back to categories</button></a>
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
