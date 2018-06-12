@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreReactionPost;
 use App\Reaction;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,7 @@ class ReactionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreReactionPost $request)
     {
         //
         $channel = new Reaction();
@@ -77,7 +78,7 @@ class ReactionsController extends Controller
      * @param  \App\Reaction  $reaction
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reaction $reaction)
+    public function update(StoreReactionPost $request, Reaction $reaction)
     {
         //
         $reaction->text = $request['text'];

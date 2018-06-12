@@ -1,20 +1,10 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 
 
@@ -39,11 +29,22 @@ Route::get('/videos/create', 'VideosController@create');
 Route::get('/videos/{video}/edit', 'VideosController@edit');
 
 Route::resource('/channels', 'ChannelsController');
-Route::get('/channels', 'ChannelsController@index');
+Route::get('/channels', 'ChannelsController@index', function()
+{
+    $query = Request::get('q');
+    $channels = $query
+
+    ? Post::where('name', 'LIKE', "%query%")->get()
+    : Post::all();
+    return View::make('channels.index')->withChannels($channels);
+
+});
 Route::get('/channels/create', 'ChannelsController@create');
 Route::get('/channels/{channel}/edit', 'ChannelsController@edit');
 Route::get('/channels/{channel}', 'ChannelsController@show');
 Route::get('/channels/{channel}/destroy', 'ChannelsController@destroy');
+
+
 
 Route::resource('/notifications', 'NotificationsController');
 Route::get('/notifications', 'NotificationsController@index');
@@ -57,9 +58,11 @@ Route::get('/reactions/create', 'ReactionsController@create');
 Route::get('/reactions/{reaction}', 'ReactionsController@show');
 Route::get('/reactions/{reaction}/edit', 'ReactionsController@edit');
 
-Route::resource('/notificationtypes', 'notificationtypesController');
-Route::get('/notificationtypes', 'notificationtypesController@index');
-Route::get('/notificationtypes/create', 'notificationtypesController@create');
-Route::get('/notificationtypes/{notificationtype}', 'notificationtypesController@show');
-Route::get('/notificationtypes/{notificationtype}/edit', 'notificationtypesController@edit');
+Route::resource('/notificationtypes', 'NotificationtypesController');
+Route::get('/notificationtypes', 'NotificationtypesController@index');
+Route::get('/notificationtypes/create', 'NotificationtypesController@create');
+Route::get('/notificationtypes/{notificationtype}', 'NotificationtypesController@show');
+Route::get('/notificationtypes/{notificationtype}/edit', 'NotificationtypesController@edit');
+
+
 

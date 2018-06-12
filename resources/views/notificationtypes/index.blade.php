@@ -7,7 +7,7 @@
                         <a href="notificationtypes/{{$notificationtype->id}}">{{$notificationtype->name}}<br></a></h4>
 
 
-                <<a href="{{URL::to('notificationtypes/'.$notificationtype->id.'/edit')}}"><button class="btn btn-primary" type="submit">Edit</button></a>
+                <a href="{{URL::to('notificationtypes/'.$notificationtype->id.'/edit')}}"><button class="btn btn-primary" type="submit">Edit</button></a>
                 {{ Form::open(array('url' => 'notificationtypes/'.$notificationtype->id,  'class' => 'pull-right')) }}
                 {{ Form::hidden('_method', 'DELETE') }}
                 {{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}

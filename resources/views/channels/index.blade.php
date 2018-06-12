@@ -3,7 +3,24 @@
 @section('content')
 <h1>Channels</h1>
 
+{{ Form::open(['method' => 'GET']) }}
+{{ Form::input('search', 'q', null, ['placeholder' => 'Search...']) }}
+{{ Form::close() }}
 
+<script>
+    (function(){
+        'use strict';
+
+        let xhr = new XMLHttpRequest();
+        xhr.open ('GET', 'http://127.0.0.1:8000/channels', true);
+        xhr.send();
+
+        xhr.onload = function (){
+            console.log(xhr.responseText);
+        };
+    })();
+
+</script>
 
 <table class="normaltabel">
     <tr class="normaltr">
@@ -33,6 +50,5 @@
 
 </table>
 <a href="{{URL::to('channels/create')}}"><button class="tablebutton" type="submit">Make new channel</button></a>
-
 
 @endsection

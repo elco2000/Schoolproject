@@ -11,7 +11,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('channel_id', 'channel_id'); !!}
-    {!! Form::text('channel_id', $reaction->channel_idchannel, array('class' => 'form-control')) !!}
+    {!! Form::text('channel_id', $reaction->channel_id, array('class' => 'form-control')) !!}
 </div>
 <div class="form-group">
     {!! Form::submit('submit!', array('class' => 'btn btn-default')); !!}
