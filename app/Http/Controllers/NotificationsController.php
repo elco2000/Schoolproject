@@ -43,6 +43,7 @@ class NotificationsController extends Controller
         $notification = new Notification();
         $notification->name = $request['name'];
         $notification->text = $request['text'];
+        $notification->notificationtype_id = $request['notificationtype_id'];
         $notification->save();
 
         return redirect()->action('NotificationsController@index')->with('correct', 'Notification gemaakt');
@@ -83,6 +84,7 @@ class NotificationsController extends Controller
 
         $notification->name = $request['name'];
         $notification->text = $request['text'];
+        $notification->notificationtype_id = $request['notificationtype_id'];
         $notification->save();
 
         return redirect ()->action('NotificationsController@index')->with('correct', 'Notification gewijzigd');
