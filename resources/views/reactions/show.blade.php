@@ -1,8 +1,14 @@
-<div class="blog-post">
-    <h2 class="blog-post-title">{{$reaction->text}}</h2>
-    <p>{{$reaction->account_idaccount}}</p><br>
-    <p>{{$reaction->channel_id}}</p>
+@extends('layouts.master')
 
-</div>
+@section('content')
 
-<a href="{{URL::to('/reactions')}}"><button class="btn btn-primary" type="submit">go back to reactions</button></a>
+    <div class="blog-post">
+        <h2 class="blog-post-title"><b>Reactions: </b></h2>
+        <p>{{$reaction->text}}</p>
+        <p>{{$reaction->account_idaccount}}</p><br>
+        <p>{{$reaction->channel_id}}</p>
+    </div>
+
+    <a href="{{URL::to('/notificationtypes')}}"><button class="tablebutton" type="submit">Back</button></a>
+
+@endsection

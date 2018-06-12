@@ -15,7 +15,7 @@ class NotificationsController extends Controller
      */
     public function index()
     {
-        $notifications = Notification::all()->take(10);
+        $notifications = Notification::all()->take(6);
         return view ('notifications.index', compact('notifications') );
     }
 

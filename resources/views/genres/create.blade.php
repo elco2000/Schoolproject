@@ -1,3 +1,6 @@
+@extends('layouts.master')
+
+@section('content')
     {!! Form::open(array('url' => 'genres', 'method' => 'POST')) !!}
     {!! Form::token() !!}
 
@@ -6,7 +9,7 @@
         {!! Form::text('name', '', array('class' => 'form-control')) !!}
     </div>
     <div class="form-group">
-        {!! Form::submit('Submit!', array('class' => 'btn btn-default')); !!}
+        {!! Form::submit('Submit', array('class' => 'btn btn-default')); !!}
         {!! Form::close() !!}
     </div>
     @if ($errors->any())
@@ -18,3 +21,5 @@
             </ul>
         </div>
     @endif
+    <a href="{{URL::to('/genres/')}}"><button class="tablebutton" type="submit">Back</button></a>
+@endsection

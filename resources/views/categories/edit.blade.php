@@ -1,18 +1,24 @@
+@extends('layouts.master')
+
+@section('content')
+
     {!! Form::open(array('url' => 'categories/'.$category->id, 'method' => 'PATCH')) !!}
     {!! Form::token() !!}
 
     <div class="form-group">
-        {!! Form::label('name', 'name'); !!}
+        {!! Form::label('name', 'name'); !!}<br>
         {!! Form::text('name', $category->name, array('class' => 'form-control')) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('description', 'description'); !!}
+        {!! Form::label('description', 'description'); !!}<br>
         {!! Form::textarea('description', $category->description, array('class' => 'form-control', 'rows' => '3')) !!}
     </div>
     <div class="form-group">
-        {!! Form::submit('Submit!', array('class' => 'btn btn-default')); !!}
+        {!! Form::submit('Submit', array('class' => 'tablebutton')); !!}
         {!! Form::close() !!}
     </div>
+
+    <a href="{{URL::to('/categories')}}"><button class="btn btn-primary" type="submit">go back to categories</button></a>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -23,3 +29,7 @@
             </ul>
         </div>
     @endif
+
+    <a href="{{URL::to('/categories/')}}"><button class="tablebutton" type="submit">Back</button></a>
+
+    @endsection
