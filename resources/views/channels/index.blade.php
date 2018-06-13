@@ -17,7 +17,7 @@
         <tr class="normaltr">
             <td>{{$channel->id}}</td>
             <td><a href="channels/{{$channel->id}}">{{$channel->name}}</a></td>
-            <td> <img src="{{$channel->logoUrl}}" alt="Missing Logo"><br></td>
+            <td> <a href="{{$channel->logoUrl}}" target="_blank">Logo Link</a><br></td>
             <td><a href="{{$channel->channelUrl}}" target="_blank">Channel Link</a><br></td>
             {{--<li>{{$channel->identertainer}}</li>--}}
                 <td><a href="{{URL::to('channels/'.$channel->id.'/edit')}}"><button class="tablebutton" type="submit">Edit</button></a></td>
