@@ -26,6 +26,13 @@ Route::get('privacy', function () {
     return view('privacy');
 });
 
+Route::get('rules', function () {
+    return view('rules');
+});
+
+Route::get('partners', function () {
+    return view('partners');
+});
 
 
 

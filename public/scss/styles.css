@@ -11,6 +11,10 @@ body {
     grid-gap: 10px;
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto auto auto auto; }
+    @media screen and (max-width: 800px) {
+      body .container {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto; } }
     body .container .project-header {
       background-color: #2eb2ff;
       grid-column-start: 1;
@@ -21,6 +25,9 @@ body {
       flex-direction: row;
       justify-content: space-between;
       align-items: stretch; }
+      @media screen and (max-width: 800px) {
+        body .container .project-header {
+          display: none; } }
       body .container .project-header a {
         width: 50%; }
         body .container .project-header a .header-image {
@@ -43,6 +50,14 @@ body {
       justify-content: space-around;
       align-items: stretch;
       padding: 5px; }
+      @media screen and (max-width: 800px) {
+        body .container .project-topnav {
+          grid-column-end: 2;
+          grid-row-start: 1;
+          grid-row-end: 2;
+          flex-direction: column;
+          align-items: center;
+          background-color: #2eb2ff; } }
       body .container .project-topnav button {
         border-radius: 60%;
         background-color: #2eb2ff; }
@@ -58,10 +73,17 @@ body {
         justify-content: space-around;
         flex-wrap: nowrap;
         align-items: center; }
+        @media screen and (max-width: 800px) {
+          body .container .project-topnav ul {
+            flex-direction: column;
+            font-size: 150%; } }
         body .container .project-topnav ul li {
           width: 20%;
           text-align: center;
           list-style-type: none; }
+          @media screen and (max-width: 800px) {
+            body .container .project-topnav ul li {
+              width: 50%; } }
           body .container .project-topnav ul li a {
             display: block;
             color: white;
@@ -77,6 +99,9 @@ body {
       justify-content: space-around;
       flex-wrap: nowrap;
       align-items: center; }
+      @media screen and (max-width: 800px) {
+        body .container .project-aside {
+          display: none; } }
       body .container .project-aside .advert {
         text-align: center;
         margin: 0 10px;
@@ -101,6 +126,12 @@ body {
       flex-wrap: wrap;
       align-items: center;
       color: white; }
+      @media screen and (max-width: 800px) {
+        body .container main {
+          grid-column-end: 2;
+          grid-row-start: 2;
+          grid-row-end: 4;
+          flex-direction: column; } }
       body .container main .main-head {
         text-align: center; }
       body .container main td {
@@ -125,6 +156,18 @@ body {
       flex-direction: row;
       justify-content: space-around;
       align-items: stretch; }
+      @media screen and (max-width: 800px) {
+        body .container .project-footer {
+          grid-column-end: 2;
+          grid-row-start: 4;
+          grid-row-end: 5;
+          flex-direction: column;
+          align-items: center;
+          font-size: 150%;
+          text-align: center; } }
+      @media screen and (max-width: 800px) {
+        body .container .project-footer h5 {
+          font-size: 200%; } }
       body .container .project-footer .footer-links {
         color: white;
         margin: 0;
