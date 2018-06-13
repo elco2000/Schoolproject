@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class ChannelsController extends Controller
 {
+    public function __construct() {
+        $this->middleware(['auth', 'isUser'], ['only' => ['create', 'store', 'edit', 'delete']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +20,14 @@ class ChannelsController extends Controller
     public function index()
     {
         //
+
+
         $channels = Channel::all();
-        return view('channels.index', compact('channels'));
+
+
+
+
+            return view('channels.index', compact('channels'));
     }
 
     /**
@@ -34,12 +44,12 @@ class ChannelsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreChannelPost $request)
     {
-        //
+        $validatedData = $request->validated();
         $channel = new Channel();
         $channel->name = $request['name'];
         $channel->logoUrl = $request['logoUrl'];
@@ -47,13 +57,13 @@ class ChannelsController extends Controller
         $channel->identertainer = $request['identertainer'];
         $channel->save();
 
-      return redirect()->action('ChannelsController@index')->with('correct', 'Channel aangemaakt!');
+        return redirect()->action('ChannelsController@index')->with('correct', 'Channel aangemaakt!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Channel  $channel
+     * @param  \App\Channel $channel
      * @return \Illuminate\Http\Response
      */
     public function show(Channel $channel)
@@ -65,7 +75,7 @@ class ChannelsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Channel  $channel
+     * @param  \App\Channel $channel
      * @return \Illuminate\Http\Response
      */
     public function edit(Channel $channel)
@@ -77,8 +87,8 @@ class ChannelsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Channel  $channel
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Channel $channel
      * @return \Illuminate\Http\Response
      */
     public function update(StoreChannelPost $request, Channel $channel)
@@ -96,13 +106,15 @@ class ChannelsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Channel  $channel
+     * @param  \App\Channel $channel
      * @return \Illuminate\Http\Response
      */
     public function destroy(Channel $channel)
     {
         //
         $channel->delete();
-       return redirect()->action('ChannelsController@index')->with('correct', 'Chanel verwijderd');
+        return redirect()->action('ChannelsController@index')->with('correct', 'Chanel verwijderd');
     }
+
 }
+

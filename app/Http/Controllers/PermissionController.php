@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePermissionPost;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -48,7 +49,7 @@ class PermissionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePermissionPost $request)
     {
         //
         $name = $request['name'];
@@ -103,7 +104,7 @@ class PermissionController extends Controller
      * @param $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Permission $permission)
+    public function update(StorePermissionPost $request, Permission $permission)
     {
         //
         $permission->name = $request['name'];

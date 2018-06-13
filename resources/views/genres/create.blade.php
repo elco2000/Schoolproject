@@ -12,6 +12,9 @@
         {!! Form::submit('Submit', array('class' => 'btn btn-default')); !!}
         {!! Form::close() !!}
     </div>
+
+    <a href="{{URL::to('/genres')}}"><button class="btn btn-primary" type="submit">go back to genres</button></a>
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRolePost;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -47,7 +48,7 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRolePost $request)
     {
         //
         $name = $request['name'];
@@ -103,7 +104,7 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreRolePost $request, $id)
     {
         //
         $role = Role::findOrFail($id);//Get role with the given id
