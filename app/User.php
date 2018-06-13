@@ -38,5 +38,8 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
 
+    public function channel(){
+        return $this->hasOne(Channel::class);
+    }
 
 }

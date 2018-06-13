@@ -20,23 +20,27 @@ class Channel extends Model
         return $this->hasMany(Video::class);
     }
 
-    public function scopeSearchByKeyword($query, $keyword)
-    {
-        if ($keyword != '') {
-            $query->where(function ($query) use ($keyword) {
-                $query->where("title", "LIKE", "%$keyword%");
-
-
-            });
-        }
-        return $query;
+    public function owner(){
+        return $this->belongsTo(User::class);
     }
 
-    use Searchable;
-
-    public function searchableAs()
-    {
-        return 'channels.index';
-    }
+//    public function scopeSearchByKeyword($query, $keyword)
+//    {
+//        if ($keyword != '') {
+//            $query->where(function ($query) use ($keyword) {
+//                $query->where("title", "LIKE", "%$keyword%");
+//
+//
+//            });
+//        }
+//        return $query;
+//    }
+//
+//    use Searchable;
+//
+//    public function searchableAs()
+//    {
+//        return 'channels.index';
+//    }
 
 }

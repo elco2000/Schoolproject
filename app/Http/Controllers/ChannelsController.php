@@ -54,7 +54,7 @@ class ChannelsController extends Controller
         $channel->name = $request['name'];
         $channel->logoUrl = $request['logoUrl'];
         $channel->channelUrl = $request['channelUrl'];
-        $channel->identertainer = $request['identertainer'];
+        $channel->user_id = $request['user_id'];
         $channel->save();
 
         return redirect()->action('ChannelsController@index')->with('correct', 'Channel aangemaakt!');
@@ -97,7 +97,7 @@ class ChannelsController extends Controller
         $channel->name = $request['name'];
         $channel->logoUrl = $request['logoUrl'];
         $channel->channelUrl = $request['channelUrl'];
-        $channel->identertainer = $request['identertainer'];
+        $channel->user_id = $request['user_id'];
         $channel->save();
 
         return redirect()->action('ChannelsController@index')->with('correct', 'Channel gewijzigd');
