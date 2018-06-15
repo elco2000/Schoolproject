@@ -32,7 +32,7 @@ class Channel extends Model
         return $query;
     }
 
-    use Searchable;
+//    use Searchable;
 
     public function searchableAs()
     {
