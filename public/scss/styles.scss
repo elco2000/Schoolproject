@@ -8,6 +8,8 @@ $darkgrey: #525053;
 $maincolor: #0100a5;
 $background: linear-gradient(to top right, #0d06ff, #ff800d);
 
+$mediamobile: 800px;
+
 // Code
 
 body {
@@ -24,30 +26,45 @@ body {
         grid-gap: 10px;
         grid-template-columns: auto auto auto auto;
         grid-template-rows: auto auto auto auto auto;
+        @media screen and (max-width: $mediamobile) {
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto;
+        }
         .project-header{
             background-color: $logocolor;
             grid-column-start: 1;
             grid-column-end: 4;
             grid-row-start: 1;
             grid-row-end: 2;
-            display: grid;
-            grid-template-columns: auto auto auto;
-            grid-template-rows: auto;
-            .header-image {
-                height: 216px;
-                width: 384px;
-                grid-column-start: 1;
-                grid-column-end: 2;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch;
+            //grid-template-columns: auto auto auto;
+            //grid-template-rows: auto;
+            @media screen and (max-width: $mediamobile) {
+                display: none;
+            }
+            a {
+                width: 50%;
+                .header-image {
+                    height: 100%;
+                    width: 100%;
+                    //grid-column-start: 1;
+                    //grid-column-end: 2;
+                }
             }
             .header-titlebox {
+                width: 60%;
                 color: white;
-                grid-column-start: 2;
-                grid-column-end: 4;
+                //grid-column-start: 2;
+                //grid-column-end: 4;
                 margin-top: auto;
                 margin-bottom: auto;
-                margin-left: 10%;
+                //margin-left: 10%;
+                text-align: center;
                 .header-title {
-                    padding-right: 0;
+                    //padding-right: 0;
                 }
             }
         }
@@ -62,8 +79,16 @@ body {
             justify-content: space-around;
             align-items: stretch;
             padding: 5px;
+            @media screen and (max-width: $mediamobile) {
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                flex-direction: column;
+                align-items: center;
+                background-color: $logocolor;
+            }
             button {
-                border-radius: 40%;
+                border-radius: 60%;
                 background-color: $logocolor;
                 a {
                     color: black;
@@ -79,12 +104,18 @@ body {
                 justify-content: space-around;
                 flex-wrap: nowrap;
                 align-items: center;
+                @media screen and (max-width: $mediamobile) {
+                    flex-direction: column;
+                    font-size: 150%;
+                }
 
                li {
                    width: 20%;
                    text-align: center;
-
                    list-style-type: none;
+                   @media screen and (max-width: $mediamobile) {
+                       width: 50%;
+                   }
                    a {
                        display: block;
                        color: white;
@@ -104,6 +135,9 @@ body {
             justify-content: space-around;
             flex-wrap: nowrap;
             align-items: center;
+            @media screen and (max-width: $mediamobile) {
+                display: none;
+            }
             .advert {
                 text-align: center;
                 margin: 0 10px;
@@ -133,6 +167,32 @@ body {
             flex-wrap: wrap;
             align-items: center;
             color: white;
+            @media screen and (max-width: $mediamobile) {
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 4;
+                flex-direction: column;
+            }
+            .show-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                .show-part {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .show-title {
+                        font-weight: bold;
+                    }
+                    .show-video {
+                        width: 80%;
+                    }
+                }
+            }
+            .main-head {
+                text-align: center;
+            }
             td {
                 color: black;
             }
@@ -162,6 +222,20 @@ body {
             flex-direction: row;
             justify-content: space-around;
             align-items: stretch;
+            @media screen and (max-width: $mediamobile) {
+                grid-column-end: 2;
+                grid-row-start: 4;
+                grid-row-end: 5;
+                flex-direction: column;
+                align-items: center;
+                font-size: 150%;
+                text-align: center;
+            }
+            h5 {
+                @media screen and (max-width: $mediamobile) {
+                    font-size: 200%;
+                }
+            }
             .footer-links {
                 color: white;
                 margin: 0;
@@ -172,6 +246,7 @@ body {
                 justify-content: space-around;
                 flex-wrap: nowrap;
                 align-items: center;
+
                 li {
                     text-align: center;
                     list-style: none;
