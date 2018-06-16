@@ -173,6 +173,23 @@ body {
                 grid-row-end: 4;
                 flex-direction: column;
             }
+            .show-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                .show-part {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .show-title {
+                        font-weight: bold;
+                    }
+                    .show-video {
+                        width: 80%;
+                    }
+                }
+            }
             .main-head {
                 text-align: center;
             }

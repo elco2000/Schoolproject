@@ -14,7 +14,7 @@
         {!! Form::textarea('description', '', array('class' => 'form-control', 'rows' => '3')) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('videoUrl', ('Web URL Video')); !!}
+        {!! Form::label('videoUrl', ('Web URL Video (embed only)')); !!}
         {!! Form::url('videoUrl', '', array('class' => 'form-control', 'rows' => '1')) !!}
     </div>
     <div class="form-group">
