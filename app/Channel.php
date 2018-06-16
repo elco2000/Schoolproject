@@ -20,8 +20,8 @@ class Channel extends Model
         return $this->hasMany(Video::class);
     }
 
-    public function owner(){
-        return $this->belongsTo(User::class);
+    public function owners(){
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 //    public function scopeSearchByKeyword($query, $keyword)

@@ -54,7 +54,7 @@ class ChannelsController extends Controller
         $channel->name = $request['name'];
         $channel->logoUrl = $request['logoUrl'];
         $channel->channelUrl = $request['channelUrl'];
-        $channel->user_id = $request['user_id'];
+        $channel->user_id=auth()->id();
         $channel->save();
 
         return redirect()->action('ChannelsController@index')->with('correct', 'Channel aangemaakt!');
