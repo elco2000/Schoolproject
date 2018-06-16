@@ -9,11 +9,11 @@
         </div>
         <div class="show-part">
             <h2 class="show-title">Type Notification:</h2>
-            {{--<p>{{$notificationtype->name}}</p>--}}
+            <p>{{$notification->notificationtypes['name']}}</p>
         </div>
         <div class="show-part">
             <h2 class="show-title">Posted By:</h2>
-            {{--<p>{{$user->name}}</p>--}}
+            <p>{{$notification->owner['name']}}</p>
         </div>
         <a href="{{URL::to('/notifications')}}"><button class="tablebutton" type="submit">Back</button></a>
     </div>

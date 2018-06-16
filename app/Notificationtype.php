@@ -10,6 +10,6 @@ class Notificationtype extends Model
     protected $guarded = [];
 
     public function notification() {
-        return $this->hasMany(Notification::class);
+        return $this->hasMany(Notification::class, 'notificationtype_id');
     }
 }

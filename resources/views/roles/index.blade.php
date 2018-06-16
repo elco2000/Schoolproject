@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>Permissions</h1>
+    <h1>Roles</h1>
     <a href="{{ URL::to('users') }}"><button class="tablebutton" type="submit">Users</button></a>
     <a href="{{ URL::to('permissions') }}"><button class="tablebutton" type="submit">Permissions</button></a>
 
