@@ -13,6 +13,7 @@
         @foreach ($channel->videos as $video)
             <h4 class="show-title">{{$video->title}}</h4>
             <iframe class="show-video" src="{{$video->videoUrl}}" allowfullscreen></iframe>
+            <p>(Should there be no video, feel free to click <a href="{{$video->videoUrl}}">here</a>.</p>
         @endforeach
     </div>
     <div class="show-part">

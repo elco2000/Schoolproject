@@ -145,6 +145,8 @@ body {
             font-weight: bold; }
           body .container main .show-container .show-part .show-video {
             width: 80%; }
+          body .container main .show-container .show-part img {
+            width: 80%; }
       body .container main .main-head {
         text-align: center; }
       body .container main td {
