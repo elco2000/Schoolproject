@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
 
@@ -47,13 +46,6 @@ class User extends Authenticatable
     public function notifications()
     {
         return $this->hasOne(Notification::class);
-    }
-
-    public function assignRole($role)
-    {
-        return $this->roles()->sync(
-            Role::whereName($role)->firstOrFail()
-        );
     }
 
 }

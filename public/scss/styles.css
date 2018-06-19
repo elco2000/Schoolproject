@@ -143,7 +143,6 @@ body {
           grid-row-end: 4;
           flex-direction: column; } }
       body .container main .index-container {
-        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;

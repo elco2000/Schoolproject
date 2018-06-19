@@ -1,22 +1,21 @@
 @extends('layouts.master')
 @section('content')
 
-    {{--<h1>Channels</h1>--}}
-    <div class="index-container">
-        <form action="{{ route('channels.search') }}" method="POST" class="ajaxSearch">
-            <input type="search" name="query" placeholder="Type something to search" autocomplete="off">
-            <input type="submit" value="Search">
-        </form>
+    <h1>Channels</h1>
+
+    <form action="{{ route('channels.search') }}" method="POST" class="ajaxSearch">
+        <input type="search" name="query" placeholder="Type something to search" autocomplete="off">
+        <input type="submit" value="Search">
+    </form>
 
 
 
-        {{--<table class="normaltabel">--}}
-        <article id="results" class="index-articles">
-            <span>Loading...</span>
-        </article>
-        {{--</table>--}}
-        <a href="{{URL::to('channels/create')}}"><button class="tablebutton" type="submit">Post a new Channel</button></a>
+    <table class="normaltabel">
+    <div id="results" class="normaltabel">
+        <span>Loading...</span>
     </div>
+        </table>
+    <a href="{{URL::to('channels/create')}}"><button class="tablebutton" type="submit">Post a new Channel</button></a>
 
 
 
