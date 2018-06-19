@@ -43,4 +43,6 @@ class Channel extends Model
         return 'channels.index';
     }
 
+
+
 }

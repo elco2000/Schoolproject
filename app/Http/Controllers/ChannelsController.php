@@ -58,6 +58,8 @@ class ChannelsController extends Controller
         $channel->user_id=auth()->id();
         $channel->save();
 
+
+
         return redirect()->action('ChannelsController@index')->with('correct', 'Channel aangemaakt!');
     }
 
