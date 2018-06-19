@@ -19,7 +19,6 @@
             <tr class="normaltr">
                 <td>{{$permission->id}}</td>
                 <td>{{$permission->name}}</td>
-                {{--<li>{{$channel->identertainer}}</li>--}}
                 <td><a href="{{URL::to('permissions/'.$permission->id.'/edit')}}"><button class="tablebutton" type="submit">Edit</button></a></td>
                 <td>{{ Form::open(array('url' => 'permissions/'.$permission->id,  'class' => 'pull-right')) }}
                     {{ Form::hidden('_method', 'DELETE') }}
