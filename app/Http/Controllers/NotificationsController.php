@@ -18,9 +18,18 @@ class NotificationsController extends Controller
      */
     public function index()
     {
-        $notifications = Notification::all()->all();
-//        $notifications = Notification::all()->take(6);
-        return view ('notifications.index', compact('notifications') );
+        $notifications = Notification::all()->take(6);
+        return view ('notifications.search', compact('notifications') );
+    }
+
+    public function postSearch(Request $request)
+    {
+        if($request->has('query')) {
+            $notifications = notification::where('name', 'LIKE', '%' . $request->get('query') .  '%')->get();
+            return view('notifications.searchresults', compact('notifications'));
+        } else {
+            return abort(400);
+        }
     }
 
     /**

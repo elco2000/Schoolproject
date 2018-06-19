@@ -99,7 +99,19 @@ Route::get('/permissions', 'PermissionController@index');
 Route::get('/permissions/create', 'PermissionController@create');
 Route::get('/permissions/{permission}/edit', 'PermissionController@edit');
 
+
+
+
+
+Route::resource('/categories', 'CategoriesController');
+Route::get('/categories', 'CategoriesController@index');
+
+Route::post('/channels/search', 'ChannelsController@postSearch')->name('channels.search');
+Route::post('/categories/search', 'CategoriesController@postSearch')->name('categories.search');
+Route::post('/notifications/search', 'NotificationsController@postSearch')->name('notifications.search');
+Route::post('/genres/search', 'genresController@postSearch')->name('genres.search');
+Route::post('/notificationtypes/search', 'NotificationtypesController@postSearch')->name('notificationtypes.search');
+Route::post('/videos/search', 'VideosController@postSearch')->name('videos.search');
+
+
 Auth::routes();
-
-
-

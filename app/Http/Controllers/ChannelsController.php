@@ -21,14 +21,25 @@ class ChannelsController extends Controller
     public function index()
     {
         //
-
-
         $channels = Channel::all();
 
+        return view('channels.search', compact('channels'));
+    }
 
+    public function postSearch(Request $request)
+    {
+        if($request->has('query')) {
+            $channels = Channel::where('name', 'LIKE', '%' . $request->get('query') .  '%')->get();
+            return view('channels.searchresults', compact('channels'));
+        } else {
+            return abort(400);
+        }
+    }
 
+    public function homepage(){
+        $channels = Channel::all();
 
-            return view('channels.index', compact('channels'));
+        return view('', compact('channels'));
     }
 
     /**
@@ -119,6 +130,5 @@ class ChannelsController extends Controller
         $channel->delete();
         return redirect()->action('ChannelsController@index')->with('correct', 'Chanel verwijderd');
     }
-
 }
 
