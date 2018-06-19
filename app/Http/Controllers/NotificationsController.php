@@ -48,6 +48,7 @@ class NotificationsController extends Controller
         $notification->name = $request['name'];
         $notification->text = $request['text'];
         $notification->notificationtype_id = $request['notificationtype_id'];
+        $notification->user_id = auth()->id();
         $notification->save();
 
         return redirect()->action('NotificationsController@index')->with('correct', 'Notification gemaakt');

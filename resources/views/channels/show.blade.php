@@ -23,7 +23,14 @@
             <p>{{$reaction->text}}</p>
         @endforeach
     </div>
-    <a href="{{URL::to('/channels')}}"><button class="tablebutton" type="submit">Back</button></a>
+    <div class="show-buttons">
+        <a href="{{URL::to('channels/'.$channel->id.'/edit')}}"><button class="tablebutton" type="submit">Edit</button></a>
+        <a href="{{URL::to('/channels')}}"><button class="tablebutton" type="submit">Back</button></a>
+        {{ Form::open(array('url' => 'channels/'.$channel->id,  'class' => 'pull-right')) }}
+        {{ Form::hidden('_method', 'DELETE') }}
+        {{ Form::submit('Delete', array('class' => 'tablebutton')) }}
+        {{ Form::close() }}
+    </div>
 </div>
 
 
