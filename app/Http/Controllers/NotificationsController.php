@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class NotificationsController extends Controller
 {
+    public function __construct() {
+        $this->middleware(['auth', 'isUser'], ['only' => ['create', 'store', 'edit', 'delete']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -54,6 +57,7 @@ class NotificationsController extends Controller
         $notification->name = $request['name'];
         $notification->text = $request['text'];
         $notification->notificationtype_id = $request['notificationtype_id'];
+        $notification->user_id = auth()->id();
         $notification->save();
 
         return redirect()->action('NotificationsController@index')->with('correct', 'Notification gemaakt');

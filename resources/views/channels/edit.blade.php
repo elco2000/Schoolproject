@@ -18,8 +18,8 @@
     {!! Form::text('channelUrl', $channel->channelUrl, array('class' => 'form-control')) !!}
 </div>
 <div class="missingform">
-    {!! Form::label('identertainer', 'identertainer'); !!}
-    {!! Form::text('identertainer', $channel->identertainer, array('class' => 'form-control')) !!}
+    {!! Form::label('user_id', 'user_id'); !!}
+    {!! Form::text('user_id', $channel->user_id, array('class' => 'form-control')) !!}
 </div>
 <div class="form-group">
     {!! Form::submit('Submit', array('class' => 'tablebutton')); !!}

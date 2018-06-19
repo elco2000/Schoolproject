@@ -26,7 +26,8 @@ class StoreChannelPost extends FormRequest
         return [
             'name' => 'required|max:45',
             'logoUrl' => 'required|max:150',
-            'channelUrl' => 'required|unique:channels|max:150'
+//            'channelUrl' => 'required|unique:channels|max:150'
+            'channelUrl' => 'required|max:150'
         ];
     }
 }

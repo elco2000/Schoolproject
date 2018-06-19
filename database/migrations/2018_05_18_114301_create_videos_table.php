@@ -19,6 +19,7 @@ class CreateVideosTable extends Migration
             $table->text('description');
             $table->string('videoUrl');
             $table->integer('channel_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

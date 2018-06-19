@@ -34,5 +34,4 @@
 </table>
 <a href="{{URL::to('channels/create')}}"><button class="tablebutton" type="submit">Post a new Channel</button></a>
 
-
 @endsection

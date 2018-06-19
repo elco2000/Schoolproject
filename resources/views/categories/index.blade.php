@@ -2,6 +2,22 @@
 
 @section('content')
 
+    {{--<div class="index-container">--}}
+        {{--<select>--}}
+            {{--<option value="" selected>Choose a Category</option>--}}
+            {{--@foreach($categories as $category)--}}
+                {{--<option value="{{$category->id}}">{{$category->name}}</option>--}}
+            {{--@endforeach--}}
+        {{--</select>--}}
+        {{--@if($category->id==$category->id)--}}
+            {{--@if($category->name==$channel->)--}}
+            {{--<div class="index-category">--}}
+
+            {{--</div>--}}
+        {{--@endif--}}
+    {{--</div>--}}
+
+
     <h1>Categories</h1>
 
     <table class="normaltabel">
