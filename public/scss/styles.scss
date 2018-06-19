@@ -30,6 +30,23 @@ body {
             grid-template-columns: auto;
             grid-template-rows: auto auto auto auto;
         }
+
+        .comment {
+
+            border-color: #17a2b8;
+            border-style: solid;
+            border-width: 5px;
+            width: 600px;
+            margin: 2%;
+            background-color: #a6a6b5;
+            overflow: hidden;
+
+            & ul {
+                list-style-type: none !important;
+            }
+
+        }
+
         .project-header{
             background-color: $logocolor;
             grid-column-start: 1;
@@ -264,6 +281,8 @@ body {
                 text-decoration: none;
             }
         }
+
+
         .project-footer {
             background-color: $darkgrey;
             grid-column-start: 1;
@@ -328,4 +347,70 @@ body {
             }
         }
     }
+    .dropbtn {
+        background-color: #2eb2ff;
+        color: black;
+        padding: 10px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+
+
+        &:hover, &:focus {
+            background-color: #2391d1;
+        }
+    }
+    #myInput {
+        border-box: box-sizing;
+        background-position: 14px 12px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 14px 20px 12px 45px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+
+
+        &:focus {outline: 3px solid #ddd;}
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+
+
+        &-content {
+            display: none;
+            position: absolute;
+            background-color: #f6f6f6;
+            min-width: 230px;
+            overflow: auto;
+            border: 1px solid #ddd;
+            z-index: 1;
+
+            & a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        }
+        & a:hover {background-color: #ddd;}
+    }
+
+
+
+
+    .show {display: block;}
+
+
+
 }
+
+.normaltabel2 {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+

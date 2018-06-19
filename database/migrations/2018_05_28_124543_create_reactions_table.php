@@ -16,8 +16,8 @@ class CreateReactionsTable extends Migration
         Schema::create('reactions', function (Blueprint $table) {
             $table->increments('id');
             $table->text('text');
-            $table->integer('account_idaccount');
             $table->integer('channel_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
