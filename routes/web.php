@@ -73,6 +73,8 @@ Route::get('/reactions/create', 'ReactionsController@create');
 Route::get('/reactions/{reaction}', 'ReactionsController@show');
 Route::get('/reactions/{reaction}/edit', 'ReactionsController@edit');
 
+//Route::get('/channels/{channel}/reactions', 'ReactionsController@store');
+
 Route::resource('/notificationtypes', 'NotificationtypesController');
 Route::get('/notificationtypes', 'NotificationtypesController@index');
 Route::get('/notificationtypes/create', 'NotificationtypesController@create');
@@ -80,7 +82,7 @@ Route::get('/notificationtypes/{notificationtype}', 'NotificationtypesController
 Route::get('/notificationtypes/{notificationtype}/edit', 'NotificationtypesController@edit');
 
 
-Auth::routes();
+
 
 Route::resource('users', 'UserController');
 Route::get('/users', 'UserController@index');
@@ -97,3 +99,19 @@ Route::get('/permissions', 'PermissionController@index');
 Route::get('/permissions/create', 'PermissionController@create');
 Route::get('/permissions/{permission}/edit', 'PermissionController@edit');
 
+
+
+
+
+Route::resource('/categories', 'CategoriesController');
+Route::get('/categories', 'CategoriesController@index');
+
+Route::post('/channels/search', 'ChannelsController@postSearch')->name('channels.search');
+Route::post('/categories/search', 'CategoriesController@postSearch')->name('categories.search');
+Route::post('/notifications/search', 'NotificationsController@postSearch')->name('notifications.search');
+Route::post('/genres/search', 'genresController@postSearch')->name('genres.search');
+Route::post('/notificationtypes/search', 'NotificationtypesController@postSearch')->name('notificationtypes.search');
+Route::post('/videos/search', 'VideosController@postSearch')->name('videos.search');
+
+
+Auth::routes();

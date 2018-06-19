@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\video;
+use App\Channel;
 use App\Http\Requests\StoreVideoPost;
 use Illuminate\Http\Request;
 class VideosController extends Controller
@@ -14,8 +15,20 @@ class VideosController extends Controller
     public function index()
     {
         $videos = Video::all()->take(10);
-        return view ('videos.index', compact('videos') );
+        return view ('videos.search', compact('videos') );
+
     }
+
+    public function postSearch(Request $request)
+    {
+        if($request->has('query')) {
+            $videos = video::where('title', 'LIKE', '%' . $request->get('query') .  '%')->get();
+            return view('videos.searchresults', compact('videos'));
+        } else {
+            return abort(400);
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,10 +38,11 @@ class VideosController extends Controller
     {
         return view ('videos.create');
     }
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param StoreVideoPost $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreVideoPost $request)
@@ -39,6 +53,9 @@ class VideosController extends Controller
         $video->description = $request['description'];
         $video->videoUrl = $request['videoUrl'];
         $video->channel_id = $request['channel_id'];
+        $video->user_id=auth()->id();
+
+
         $video->save();
         return redirect()->action('VideosController@index')->with('correct', 'Video gemaakt');
     }

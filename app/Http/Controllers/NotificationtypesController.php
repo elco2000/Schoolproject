@@ -17,9 +17,19 @@ class NotificationtypesController extends Controller
     public function index()
     {
         $notificationtypes = Notificationtype::all();
-        return view('notificationtypes.index', compact('notificationtypes'));
+        return view('notificationtypes.search', compact('notificationtypes'));
     }
 
+    public function postSearch(Request $request)
+    {
+        if($request->has('query')) {
+            $notificationtypes = notificationtype::where('name', 'LIKE', '%' . $request->get('query') .  '%')->get();
+            return view('notificationtypes.searchresults', compact('notificationtypes'));
+        } else {
+            return abort(400);
+        }
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
