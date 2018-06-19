@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Requests\StoreCategoryPost;
 use Illuminate\Http\Request;
 
+
 class CategoriesController extends Controller
 {
     public function __construct() {
@@ -16,11 +17,33 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     *
+     */
+
+
+
     public function index()
     {
-        $categories = Category::all();
-        return view('categories.index', compact('categories'));
+
+            $categories = Category::all();
+            return view('categories.search', compact('categories'));
+
+
     }
+
+    public function postSearch(Request $request)
+    {
+        if($request->has('query')) {
+            $categories = Category::where('name', 'LIKE', '%' . $request->get('query') .  '%')->get();
+            return view('categories.searchresults', compact('categories'));
+        } else {
+            return abort(400);
+        }
+    }
+
 
     /**
      * Show the form for creating a new resource.
