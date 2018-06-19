@@ -160,7 +160,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Laravelista\Comments\Providers\CommentsServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
     ],
 

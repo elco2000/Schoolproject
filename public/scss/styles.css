@@ -142,7 +142,41 @@ body {
           grid-row-start: 2;
           grid-row-end: 4;
           flex-direction: column; } }
+      body .container main .index-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center; }
+        body .container main .index-container .index-articles {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          align-items: center;
+          margin: 1%; }
+          body .container main .index-container .index-articles .index-article {
+            width: 40%;
+            background-color: white;
+            color: black;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 25%;
+            padding: 4%;
+            word-wrap: break-word; }
+            body .container main .index-container .index-articles .index-article img {
+              width: 100%;
+              border-radius: 50%; }
+            body .container main .index-container .index-articles .index-article .show-link {
+              text-decoration: none;
+              color: black; }
+            body .container main .index-container .index-articles .index-article .read-more {
+              text-decoration: underline; }
+            body .container main .index-container .index-articles .index-article .article-name {
+              text-align: center;
+              padding: 10px 20px; }
       body .container main .show-container {
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -155,6 +189,14 @@ body {
             font-weight: bold; }
           body .container main .show-container .show-part .show-video {
             width: 80%; }
+          body .container main .show-container .show-part img {
+            width: 80%; }
+        body .container main .show-container .show-buttons {
+          width: 40%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center; }
       body .container main .main-head {
         text-align: center; }
       body .container main td {

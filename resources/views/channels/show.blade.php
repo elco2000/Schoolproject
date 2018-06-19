@@ -5,7 +5,7 @@
 <div class="show-container">
     <div class="show-part">
         <h2 class="show-title">{{$channel->name}}</h2>
-        <img style="width: 300px; height: 300px;" src="{{$channel->logoUrl}}" alt="Logo Picture">
+        <img src="{{$channel->logoUrl}}" alt="Logo Picture">
         <h4>Channel Url: <a href="{{$channel->channelUrl}}" target="_blank">Link</a></h4>
     </div>
     <div class="show-part">

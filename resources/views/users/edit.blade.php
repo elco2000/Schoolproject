@@ -42,6 +42,6 @@
         </div>
     @endif
 
-    <a href="{{URL::to('/channels/')}}"><button class="tablebutton" type="submit">Go back to channel</button></a>
+    <a href="{{URL::to('/users/')}}"><button class="tablebutton" type="submit">Back</button></a>
 
 @endsection
