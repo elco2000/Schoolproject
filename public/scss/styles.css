@@ -264,5 +264,48 @@ body {
           list-style: none; }
           body .container .project-footer .footer-contact li a {
             color: white; }
+  body .dropbtn {
+    background-color: #2eb2ff;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer; }
+    body .dropbtn:hover, body .dropbtn:focus {
+      background-color: #2391d1; }
+  body #myInput {
+    border-box: box-sizing;
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd; }
+    body #myInput:focus {
+      outline: 3px solid #ddd; }
+  body .dropdown {
+    position: relative;
+    display: inline-block; }
+    body .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f6f6f6;
+      min-width: 230px;
+      overflow: auto;
+      border: 1px solid #ddd;
+      z-index: 1; }
+      body .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block; }
+    body .dropdown a:hover {
+      background-color: #ddd; }
+  body .show {
+    display: block; }
+
+.normaltabel2 {
+  width: 100%;
+  border-collapse: collapse; }
 
 /*# sourceMappingURL=styles.css.map */

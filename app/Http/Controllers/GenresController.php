@@ -17,7 +17,17 @@ class GenresController extends Controller
     {
         //
         $genres = Genre::all();
-        return view('genres.index', compact('genres'));
+        return view('genres.search', compact('genres'));
+    }
+
+    public function postSearch(Request $request)
+    {
+        if($request->has('query')) {
+            $genres = genre::where('name', 'LIKE', '%' . $request->get('query') .  '%')->get();
+            return view('genres.searchresults', compact('genres'));
+        } else {
+            return abort(400);
+        }
     }
 
     /**
