@@ -5,8 +5,9 @@
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <link href="{{asset('scss/style.css')}}" rel="stylesheet">
     <link href="{{asset('scss/styles.css')}}" rel="stylesheet">
-</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+</head>
 <body>
     {{--<header class="blog-header py-3">--}}
         {{--<div class="row flex-nowrap justify-content-between align-items-center">--}}
@@ -104,6 +105,7 @@
             {{--</div>--}}
         </aside>
         <main role="main">
+            @yield('zoek')
             @yield('content')
         </main>
         <footer class="project-footer">
@@ -128,5 +130,5 @@
         </footer>
     </div>
 </body>
-
+@yield('scripts')
 </html>

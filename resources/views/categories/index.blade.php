@@ -14,7 +14,7 @@
         </tr>
         @foreach($categories as $category)
             <tr class="normaltr">
-                <td>{{$category->id}}</td>
+                <td>{{$category->id, 'DESC'}}</td>
                 <td><a href="categories/{{$category->id}}">{{$category->name}}</a></td>
                 <td> {{$category->description}}</td>
                 <td><a href="{{URL::to('categories/'.$category->id.'/edit')}}"><button class="tablebutton" type="submit">Edit</button></a></td>

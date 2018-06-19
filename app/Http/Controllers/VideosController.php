@@ -14,8 +14,20 @@ class VideosController extends Controller
     public function index()
     {
         $videos = Video::all()->take(10);
-        return view ('videos.index', compact('videos') );
+        return view ('videos.search', compact('videos') );
+
     }
+
+    public function postSearch(Request $request)
+    {
+        if($request->has('query')) {
+            $videos = video::where('title', 'LIKE', '%' . $request->get('query') .  '%')->get();
+            return view('videos.searchresults', compact('videos'));
+        } else {
+            return abort(400);
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *

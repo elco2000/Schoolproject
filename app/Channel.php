@@ -12,31 +12,14 @@ class Channel extends Model
     protected $fillable = ['name', 'logoUrl', 'channelUrl', 'identertainer'];
     protected $guarded = [];
 
+
     public function reactions() {
         return $this->hasMany(Reaction::class);
     }
 
     public function videos() {
-        return $this->hasMany(Video::class);
-    }
+    return $this->hasMany(Video::class);
+}
 
-    public function scopeSearchByKeyword($query, $keyword)
-    {
-        if ($keyword != '') {
-            $query->where(function ($query) use ($keyword) {
-                $query->where("title", "LIKE", "%$keyword%");
-
-
-            });
-        }
-        return $query;
-    }
-
-    use Searchable;
-
-    public function searchableAs()
-    {
-        return 'channels.index';
-    }
 
 }
