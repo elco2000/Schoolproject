@@ -1,17 +1,17 @@
 @extends('layouts.master')
 @section('content')
 
-    <h1>categories</h1>
+    {{--<h1>Categories</h1>--}}
 
     <form action="{{ route('categories.search') }}" method="POST" class="ajaxSearch">
         <input type="search" name="query" placeholder="Type something to search" autocomplete="off">
         <input type="submit" value="Search">
     </form>
 
-    <table class="normaltabel">
-        <div id="results" class="normaltabel">
-            <span>Loading...</span>
-        </div>
+    <table id="results" class="normaltabel">
+        {{--<div id="results" class="normaltabel">--}}
+            {{--<span>Loading...</span>--}}
+        {{--</div>--}}
     </table>
     <a href="{{URL::to('categories/create')}}">
         <button class="tablebutton" type="submit">Post a new category</button>

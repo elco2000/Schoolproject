@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
 
-    <h1>notifications</h1>
-
+    {{--<h1>Notifications</h1>--}}
+    <div class="index-container">
     <form action="{{ route('notifications.search') }}" method="POST" class="ajaxSearch">
         <input type="search" name="query" placeholder="Type something to search" autocomplete="off">
         <input type="submit" value="Search">
@@ -10,19 +10,13 @@
 
 
 
-    <table class="normaltabel">
-        <div id="results" class="normaltabel">
+    {{--<table class="normaltabel">--}}
+        <article id="results" class="index-articles">
             <span>Loading...</span>
-        </div>
-    </table>
+        </article>
+    {{--</table>--}}
     <a href="{{URL::to('notifications/create')}}"><button class="tablebutton" type="submit">Post a new notification</button></a>
-
-
-
-
-
-
-
+    </div>
 @endsection
 
 @section('scripts')
