@@ -1,13 +1,18 @@
 @extends('layouts.master')
 @section('content')
 
+
     <h1>Channels</h1>
+
+
 
     <form action="{{ route('channels.search') }}" method="POST" class="ajaxSearch">
         <input type="search" name="query" placeholder="Type something to search" autocomplete="off">
         <input type="submit" value="Search">
     </form>
 
+
+    
 
 
     <table class="normaltabel">
@@ -24,6 +29,8 @@
 
 
 @endsection
+
+
 
     @section('scripts')
     <script>

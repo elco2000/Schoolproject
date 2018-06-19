@@ -19,7 +19,7 @@
     </div>
     <div class="form-group">
         {!! Form::label('channel_id', ('ID Channel')); !!}
-        {!! Form::url('channel_id', $video->channel_id, array('class' => 'form-control', 'rows' => '1')) !!}
+        {!! Form::text('channel_id', $video->channel_id, array('class' => 'form-control', 'rows' => '1')) !!}
     </div>
     <div class="form-group">
         {!! Form::submit('Submit', array('class' => 'btn btn-default')); !!}

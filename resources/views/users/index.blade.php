@@ -29,7 +29,7 @@
                 <a href="{{URL::to('notificationtypes/create')}}">Notificationtypes</a>
                 <a href="{{URL::to('permissions/create')}}">Permissions</a>
                 <a href="{{URL::to('reactions/create')}}">Reactions</a>
-                <a href="{{URL::to('role/create')}}">Role</a>
+                <a href="{{URL::to('roles/create')}}">Role</a>
                 <a href="{{URL::to('videos/create')}}">Videos</a>
             </div>
         </div>
