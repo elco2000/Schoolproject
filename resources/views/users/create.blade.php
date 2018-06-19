@@ -44,4 +44,5 @@
         </div>
     @endif
 
+    <a href="{{URL::to('/users/')}}"><button class="tablebutton" type="submit">Back</button></a>
 @endsection

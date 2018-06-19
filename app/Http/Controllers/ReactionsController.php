@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreReactionPost;
 use App\Reaction;
+use App\Channel;
 use Illuminate\Http\Request;
 
 class ReactionsController extends Controller
@@ -37,14 +38,17 @@ class ReactionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreReactionPost $request)
+    public function store(request $request)
     {
         //
         $channel = new Reaction();
         $channel->text = $request['text'];
-        $channel->account_idaccount = $request['account_idaccount'];
         $channel->channel_id = $request['channel_id'];
+        $channel->user_id = auth()->id();
         $channel->save();
+
+        return back();
+
     }
 
     /**
@@ -82,7 +86,6 @@ class ReactionsController extends Controller
     {
         //
         $reaction->text = $request['text'];
-        $reaction->account_idaccount = $request['account_idaccount'];
         $reaction->channel_id = $request['channel_id'];
         $reaction->save();
         return redirect ()->action('ReactionsController@index')->with('correct', 'Video gewijzigd');

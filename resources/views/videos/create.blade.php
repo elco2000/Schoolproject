@@ -14,12 +14,12 @@
         {!! Form::textarea('description', '', array('class' => 'form-control', 'rows' => '3')) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('videoUrl', ('Web URL Video')); !!}
+        {!! Form::label('videoUrl', ('Web URL Video (embed only)')); !!}
         {!! Form::url('videoUrl', '', array('class' => 'form-control', 'rows' => '1')) !!}
     </div>
     <div class="form-group">
         {!! Form::label('channel_id', ('ID Channel')); !!}
-        {!! Form::url('channel_id', '', array('class' => 'form-control', 'rows' => '1')) !!}
+        {!! Form::text('channel_id', '', array('class' => 'form-control', 'rows' => '1')) !!}
     </div>
     <div class="form-group">
         {!! Form::submit('Submit', array('class' => 'btn btn-default')); !!}

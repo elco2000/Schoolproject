@@ -7,6 +7,7 @@ $factory->define(App\Notification::class, function (Faker $faker) {
         'name' => $faker ->sentence(2),
         'text' => $faker->paragraph(10),
         'notificationtype_id' => $faker->numberBetween(0,10),
+        'user_id' => $faker->numberBetween(0,1),
         'created_at' => $faker->dateTime(),
         'updated_at' => $faker->dateTime()
     ];

@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Channel;
+use App\Video;
 use App\Http\Requests\StoreChannelPost;
 use Illuminate\Http\Request;
 
 class ChannelsController extends Controller
 {
+//    public function __construct() {
+//        $this->middleware(['auth', 'isUser'], ['only' => ['create', 'store', 'edit', 'delete']]);
+//    }
+
     /**
      * Display a listing of the resource.
      *
@@ -50,7 +55,7 @@ class ChannelsController extends Controller
         $channel->name = $request['name'];
         $channel->logoUrl = $request['logoUrl'];
         $channel->channelUrl = $request['channelUrl'];
-        $channel->identertainer = $request['identertainer'];
+        $channel->user_id=auth()->id();
         $channel->save();
 
         return redirect()->action('ChannelsController@index')->with('correct', 'Channel aangemaakt!');
@@ -65,7 +70,8 @@ class ChannelsController extends Controller
     public function show(Channel $channel)
     {
         //
-        return view('channels.show', compact('channel'));
+        $videos = Video::get();
+        return view('channels.show', compact('channel'))->with('videos', $videos);
     }
 
     /**
@@ -93,7 +99,7 @@ class ChannelsController extends Controller
         $channel->name = $request['name'];
         $channel->logoUrl = $request['logoUrl'];
         $channel->channelUrl = $request['channelUrl'];
-        $channel->identertainer = $request['identertainer'];
+        $channel->user_id = $request['user_id'];
         $channel->save();
 
         return redirect()->action('ChannelsController@index')->with('correct', 'Channel gewijzigd');

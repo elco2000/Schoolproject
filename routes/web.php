@@ -18,8 +18,21 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('about', function () {
+   return view('about');
+});
 
+Route::get('privacy', function () {
+    return view('privacy');
+});
 
+Route::get('rules', function () {
+    return view('rules');
+});
+
+Route::get('partners', function () {
+    return view('partners');
+});
 
 
 
@@ -60,6 +73,8 @@ Route::get('/reactions/create', 'ReactionsController@create');
 Route::get('/reactions/{reaction}', 'ReactionsController@show');
 Route::get('/reactions/{reaction}/edit', 'ReactionsController@edit');
 
+//Route::get('/channels/{channel}/reactions', 'ReactionsController@store');
+
 Route::resource('/notificationtypes', 'NotificationtypesController');
 Route::get('/notificationtypes', 'NotificationtypesController@index');
 Route::get('/notificationtypes/create', 'NotificationtypesController@create');
@@ -67,7 +82,7 @@ Route::get('/notificationtypes/{notificationtype}', 'NotificationtypesController
 Route::get('/notificationtypes/{notificationtype}/edit', 'NotificationtypesController@edit');
 
 
-Auth::routes();
+
 
 Route::resource('users', 'UserController');
 Route::get('/users', 'UserController@index');
@@ -83,4 +98,8 @@ Route::resource('permissions', 'PermissionController');
 Route::get('/permissions', 'PermissionController@index');
 Route::get('/permissions/create', 'PermissionController@create');
 Route::get('/permissions/{permission}/edit', 'PermissionController@edit');
+
+Auth::routes();
+
+
 

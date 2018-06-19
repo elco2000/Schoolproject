@@ -26,12 +26,7 @@
         {{--</div>--}}
     {{--</header>--}}
     <div class="container">
-        <header class="project-header">
-            <a href="{{url('/')}}"><img class="header-image" src="{{asset('images/logo.png')}}" alt="Header Image"></a>
-            <div class="header-titlebox">
-                <h1 class="header-title">Free Entertainment</h1>
-            </div>
-        </header>
+        @include('layouts.header')
         <nav class="project-topnav">
             <ul>
                 <li><a href="{{url('/')}}">Home</a></li>
@@ -84,12 +79,12 @@
                     <h4 class="advert-title">Patreon</h4>
                 </a>
             </div>
-            {{--<div class="advert">--}}
-                {{--<a href="#">--}}
-                    {{--<img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">--}}
-                    {{--<h4 class="advert-title">Advert Title</h4>--}}
-                {{--</a>--}}
-            {{--</div>--}}
+            <div class="advert">
+                <a href="https://obsproject.com/" target="_blank">
+                    <img class="advert-img" src="https://i0.wp.com/www.freevideoeditingsoftwares.com/wp-content/uploads/2017/07/open-broadcaster-software-review-obs-studio-review.png?resize=660%2C330" alt="Advert Image">
+                    <h4 class="advert-title">OBS Studio</h4>
+                </a>
+            </div>
             {{--<div class="advert">--}}
                 {{--<a href="#">--}}
                     {{--<img class="advert-img" src="{{asset('images/advertisement.png')}}" alt="Advert Image">--}}
@@ -106,26 +101,7 @@
         <main role="main">
             @yield('content')
         </main>
-        <footer class="project-footer">
-            <ul class="footer-links">
-                <li><a href="#">To Be Added</a></li>
-                <li><a href="#">To Be Added</a></li>
-                <li><a href="#">To Be Added</a></li>
-                <li><a href="#">To Be Added</a></li>
-            </ul>
-            <ul class="footer-links">
-                <li><a href="#">To Be Added</a></li>
-                <li><a href="#">To Be Added</a></li>
-                <li><a href="#">To Be Added</a></li>
-                <li><a href="#">To Be Added</a></li>
-            </ul>
-            <ul class="footer-contact">
-                <h5>Contact</h5>
-                <p>Address: Sportlaan 15 Spijkenisse (NL)</p>
-                <p>Email: support@entertainment4free.com</p>
-                <p>Tel: (31+) 06-12345678</p>
-            </ul>
-        </footer>
+        @include('layouts.footer')
     </div>
 </body>
 

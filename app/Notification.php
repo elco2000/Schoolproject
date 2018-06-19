@@ -13,4 +13,10 @@ class Notification extends Model
     public function notificationtypes() {
         return $this->belongsTo(Notificationtype::class, 'notificationtype_id');
     }
+
+    public function owner() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    protected $table = 'notifications';
 }

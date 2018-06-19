@@ -18,8 +18,8 @@
     {!! Form::text('channelUrl', '', array('class' => '')) !!}
 </div>
 <div class="missingform">
-    {!! Form::label('identertainer', 'IDEntertainer'); !!}
-    {!! Form::text('identertainer', '4', array('class' => '')) !!}
+    {!! Form::label('user_id', 'user_id'); !!}
+    {!! Form::text('user_id', '4', array('class' => '')) !!}
 </div>
 <div class="">
     {!! Form::submit('Submit', array('class' => 'tablebutton')); !!}
@@ -38,6 +38,5 @@
     </div>
 @endif
 
-<a href="{{URL::to('/channels/')}}"><button class="tablebutton" type="submit">Back</button></a>
 
     @endsection
