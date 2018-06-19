@@ -24,6 +24,25 @@ class Channel extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        if ($keyword != '') {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("title", "LIKE", "%$keyword%");
+
+
+            });
+        }
+        return $query;
+    }
+
+//    use Searchable;
+
+    public function searchableAs()
+    {
+        return 'channels.index';
+    }
+
 
 
 }
