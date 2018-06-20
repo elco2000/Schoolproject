@@ -53,7 +53,7 @@ class VideosController extends Controller
         $video->description = $request['description'];
         $video->videoUrl = $request['videoUrl'];
         $video->channel_id = $request['channel_id'];
-//        $video->user_id=auth()->id();
+        $video->user_id=auth()->id();
 
 
         $video->save();
