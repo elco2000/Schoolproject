@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class ChannelsController extends Controller
 {
-//    public function __construct() {
-//        $this->middleware(['auth', 'isUser'], ['only' => ['create', 'store', 'edit', 'delete']]);
-//    }
+    public function __construct() {
+        $this->middleware(['auth', 'isUser'], ['only' => ['create', 'store', 'edit', 'delete']]);
+    }
 
     /**
      * Display a listing of the resource.
