@@ -7,10 +7,10 @@
             <h2 class="show-title">{{$notification->name}}</h2>
             <p>{{$notification->text}}</p>
         </div>
-        <div class="show-part">
-            <h2 class="show-title">Type Notification:</h2>
-            <p>{{$notification->notificationtypes['name']}}</p>
-        </div>
+        {{--<div class="show-part">--}}
+            {{--<h2 class="show-title">Type Notification:</h2>--}}
+            {{--<p>{{$notification->notificationtypes['name']}}</p>--}}
+        {{--</div>--}}
         <div class="show-part">
             <h2 class="show-title">Posted By:</h2>
             <p>{{$notification->owner['name']}}</p>
