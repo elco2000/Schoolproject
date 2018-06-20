@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 
 class ReactionsController extends Controller
 {
+    public function __construct() {
+        $this->middleware(['auth', 'isUser'], ['only' => ['create', 'store', 'edit', 'delete']]);
+    }
     /**
      * Display a listing of the resource.
      *

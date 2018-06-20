@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class NotificationsController extends Controller
 {
+
     public function __construct() {
         $this->middleware(['auth', 'isUser'], ['only' => ['create', 'store', 'edit', 'delete']]);
     }
