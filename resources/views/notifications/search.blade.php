@@ -8,20 +8,6 @@
         <input type="submit" value="Search">
     </form>
 
-        <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-            <div id="myDropdown" class="dropdown-content">
-                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                <a href="{{URL::to('genres')}}">Genres</a>
-                <a href="{{URL::to('users')}}">Users</a>
-                <a href="{{URL::to('notificationtypes')}}">Notificationtypes</a>
-                <a href="{{URL::to('permissions')}}">Permissions</a>
-                <a href="{{URL::to('reactions')}}">Reactions</a>
-                <a href="{{URL::to('roles')}}">Role</a>
-                <a href="{{URL::to('videos')}}">Videos</a>
-            </div>
-        </div>
-
         <script>
             /* When the user clicks on the button,
             toggle between hiding and showing the dropdown content */
