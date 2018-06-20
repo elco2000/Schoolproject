@@ -22,7 +22,6 @@
             {{ Form::hidden('_method', 'DELETE') }}
             {{ Form::submit('Delete', array('class' => 'tablebutton')) }}
             {{ Form::close() }}
-
         </div>
     </div>
 

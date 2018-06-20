@@ -1,4 +1,4 @@
-<table class="normaltabel">
+{{--<table class="normaltabel">--}}
     <tr class="normaltr">
         <th>Id</th>
         <th>Name</th>
@@ -26,4 +26,4 @@
     <span>No results</span>
 
 @endforelse
-</table>
+{{--</table>--}}
