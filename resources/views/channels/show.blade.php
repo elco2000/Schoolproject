@@ -14,6 +14,13 @@
             <h4 class="show-title">{{$video->title}}</h4>
             <iframe class="show-video" src="{{$video->videoUrl}}" allowfullscreen></iframe>
             <p>(Should there be no video, feel free to click <a href="{{$video->videoUrl}}">here</a>.</p>
+            <div class="show-buttons">
+                <a href="{{URL::to('videos/'.$video->id.'/edit')}}"><button class="tablebutton" type="submit">Edit Video</button></a>
+                {{ Form::open(array('url' => 'videos/'.$video->id,  'class' => 'pull-right')) }}
+                {{ Form::hidden('_method', 'DELETE') }}
+                {{ Form::submit('Delete Video', array('class' => 'tablebutton')) }}
+                {{ Form::close() }}
+            </div>
         @endforeach
     </div>
     <a href="{{URL::to('/videos/create')}}"><button class="tablebutton" type="submit">Add Video</button></a>

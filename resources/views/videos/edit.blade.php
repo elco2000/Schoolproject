@@ -36,6 +36,6 @@
         </div>
     @endif
 
-    <a href="{{URL::to('/videos/')}}"><button class="tablebutton" type="submit">Back</button></a>
+    <a href="{{URL::to('/channels/')}}"><button class="tablebutton" type="submit">Back</button></a>
 
 @endsection
