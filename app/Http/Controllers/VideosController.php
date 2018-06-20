@@ -94,7 +94,7 @@ class VideosController extends Controller
         $video->videoUrl = $request['videoUrl'];
         $video->channel_id = $request['channel_id'];
         $video->save();
-        return redirect ()->action('VideosController@index')->with('correct', 'Video gewijzigd');
+        return back();
     }
     /**
      * Remove the specified resource from storage.

@@ -22,15 +22,12 @@
             <button onclick="myFunction()" class="dropbtn">Dropdown</button>
             <div id="myDropdown" class="dropdown-content">
                 <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                <a href="{{URL::to('categories/create')}}">Categories</a>
-                <a href="{{URL::to('channels/create')}}">Channels</a>
-                <a href="{{URL::to('genres/create')}}">Genres</a>
-                <a href="{{URL::to('notifications/create')}}">Notifications</a>
-                <a href="{{URL::to('notificationtypes/create')}}">Notificationtypes</a>
-                <a href="{{URL::to('permissions/create')}}">Permissions</a>
-                <a href="{{URL::to('reactions/create')}}">Reactions</a>
-                <a href="{{URL::to('role/create')}}">Role</a>
-                <a href="{{URL::to('videos/create')}}">Videos</a>
+                <a href="{{URL::to('genres')}}">Genres</a>
+                <a href="{{URL::to('notificationtypes')}}">Notificationtypes</a>
+                <a href="{{URL::to('permissions')}}">Permissions</a>
+                <a href="{{URL::to('reactions')}}">Reactions</a>
+                <a href="{{URL::to('roles')}}">Role</a>
+                <a href="{{URL::to('videos')}}">Videos</a>
             </div>
         </div>
 

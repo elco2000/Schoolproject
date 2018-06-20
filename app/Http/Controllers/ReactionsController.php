@@ -44,7 +44,7 @@ class ReactionsController extends Controller
         $channel = new Reaction();
         $channel->text = $request['text'];
         $channel->channel_id = $request['channel_id'];
-        $channel->user_id = auth()->id();
+//        $channel->user_id = auth()->id();
         $channel->save();
 
         return back();

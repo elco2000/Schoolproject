@@ -193,7 +193,7 @@ body {
           body .container main .show-container .show-part img {
             width: 80%; }
         body .container main .show-container .show-buttons {
-          width: 40%;
+          width: 70%;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
