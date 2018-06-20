@@ -24,6 +24,17 @@ class Channel extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function categories(){
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function assignCategory($category)
+    {
+        return $this->categories()->sync(
+            Category::whereName($category)->firstOrFail()
+        );
+    }
+
 
 
 }

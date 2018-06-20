@@ -19,6 +19,7 @@ class CreateChannelsTable extends Migration
             $table->string('logoUrl', 150);
             $table->string('channelUrl', 150)->unique();
             $table->integer('user_id');
+            $table->integer('category_id');
             $table->timestamps();
         });
     }

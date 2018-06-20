@@ -21,6 +21,14 @@
     {!! Form::label('user_id', 'user_id'); !!}
     {!! Form::text('user_id', '4', array('class' => '')) !!}
 </div>
+
+<div class=''>
+    @foreach ($categories as $category)
+        {{ Form::checkbox('categories[]',  $category->id ) }}
+        {{ Form::label($category->name, ucfirst($category->name)) }}<br>
+    @endforeach
+</div>
+
 <div class="">
     {!! Form::submit('Submit', array('class' => 'tablebutton')); !!}
     {!! Form::close() !!}

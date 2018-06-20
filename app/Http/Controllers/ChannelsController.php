@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Channel;
+use App\Category;
 use App\Video;
 use App\Http\Requests\StoreChannelPost;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class ChannelsController extends Controller
 {
@@ -50,7 +52,8 @@ class ChannelsController extends Controller
     public function create()
     {
         //
-        return view('channels.create');
+        $categories = Category::get();
+        return view('channels.create')->with('categories', $categories);
     }
 
     /**
@@ -62,12 +65,24 @@ class ChannelsController extends Controller
     public function store(StoreChannelPost $request)
     {
         $validatedData = $request->validated();
+        $name = $request['name'];
         $channel = new Channel();
-        $channel->name = $request['name'];
+        $channel->name = $name;
         $channel->logoUrl = $request['logoUrl'];
         $channel->channelUrl = $request['channelUrl'];
         $channel->user_id=auth()->id();
+
+        $categories = $request['categories'];
+        $channel->category_id=implode($categories);
+
         $channel->save();
+
+        foreach ($categories as $category) {
+            $p = Category::where('id', '=', $category)->firstOrFail();
+            //Fetch the newly created role and assign permission
+            $channel = Channel::where('name', '=', $name)->first();
+            $channel->assignCategory($p);
+        }
 
         return redirect()->action('ChannelsController@index')->with('correct', 'Channel aangemaakt!');
     }

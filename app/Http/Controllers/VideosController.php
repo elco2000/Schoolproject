@@ -57,7 +57,7 @@ class VideosController extends Controller
 
 
         $video->save();
-        return redirect()->action('VideosController@index')->with('correct', 'Video gemaakt');
+        return back();
     }
     /**
      * Display the specified resource.
